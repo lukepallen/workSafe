@@ -1,10 +1,14 @@
 import React from 'react';
+import Tile from './Tile/Tile'
 
 class LandingPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>It works!</h1>
+                <Tile></Tile>
+                <Tile></Tile>
+                <Tile></Tile>
+                <Tile></Tile>
             </div>
         )
     }

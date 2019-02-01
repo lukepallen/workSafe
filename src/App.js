@@ -6,7 +6,7 @@ import LandingPage from './LandingPage/LandingPage'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div id="page">
         <div id="Header">
           <Header></Header>
         </div>
