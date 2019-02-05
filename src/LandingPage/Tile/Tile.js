@@ -1,11 +1,26 @@
 import React from 'react';
+import './Tile.scss'
 
 class Tile extends React.Component {
+    getPos() {
+        switch(this.props.pos) {
+            case 0:
+                return "right";
+            case 1:
+                return "center";
+            case 2:
+                return "left";
+            default:
+                return "right";
+        }
+    }
     render() {
         return (
-            <div>
-                <p>Heyyy look at me I'm a tile</p>
-                <img src={this.props.imgSrc} alt="tile"></img>
+            <div className="tile">
+                <img className="tileImage" src={window.location.origin + this.props.imgSrc} alt="tile"></img>
+                <div className={"text " + this.getPos()}>
+                    <p>{this.props.text}</p>
+                </div>
             </div>
         )
     }

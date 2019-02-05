@@ -1,7 +1,14 @@
+@import 'src/app';
+
+.header {
+    font-size: 1.25rem;
+    margin-bottom: 50px;
+}
+
 .header-title {
     display: flex;
     justify-content: center;
-    background-color: pink; 
+    background-color: $primary; 
 }
 
 .navbar {
@@ -10,6 +17,6 @@
 }
 
 .selected {
-    color: orange;
+    color: #E1DFCE;
     text-decoration: underline;
 }
