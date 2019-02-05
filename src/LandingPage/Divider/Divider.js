@@ -1,10 +1,15 @@
 import React from 'react';
+import './Divider.scss';
 
 class Divider extends React.Component {
     render() {
         return (
             <div className="divider">
-                <p>{this.props.fact}</p>
+                <div className="cornerBorder topLeft"></div>
+                <div className="dividerText">
+                    <p>{this.props.fact}</p>
+                </div>
+                <div className="cornerBorder botRight"></div>
             </div>
         )
     }

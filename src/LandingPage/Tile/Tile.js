@@ -19,7 +19,8 @@ class Tile extends React.Component {
             <div className="tile">
                 <img className="tileImage" src={window.location.origin + this.props.imgSrc} alt="tile"></img>
                 <div className={"text " + this.getPos()}>
-                    <p>{this.props.text}</p>
+                    <p>{this.props.text ? this.props.text : 
+                        "Some placeholder text that will be changed down the road"}</p>
                 </div>
             </div>
         )

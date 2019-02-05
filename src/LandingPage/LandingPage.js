@@ -15,6 +15,7 @@ class LandingPage extends React.Component {
         if (this.pos > 3) {
             this.pos = 0;
         }
+        console.log(this.pos)
         return this.pos;
     }
 
@@ -23,11 +24,11 @@ class LandingPage extends React.Component {
             <div>
                 <Tile imgSrc="/img/placeholder_image1.jpg" text={this.missionStatement} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/placeholder_image2.jpg" text={this.solution}></Tile>
+                <Tile imgSrc="/img/placeholder_image2.jpg" text={this.solution} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/placeholder_image345.jpg"></Tile>
+                <Tile imgSrc="/img/placeholder_image345.jpg" pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/extra_placeholder_image.jpg"></Tile>
+                <Tile imgSrc="/img/extra_placeholder_image.jpg"pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
             </div>
         )
