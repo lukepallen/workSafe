@@ -17,7 +17,7 @@ class Tile extends React.Component {
     render() {
         return (
             <div className="tile">
-                <img className="tileImage" src={window.location.origin + this.props.imgSrc} alt="tile"></img>
+                <img className="tileImage" src={this.props.imgSrc} alt="tile"></img>
                 <div className={"text " + this.getPos()}>
                     <p>{this.props.text ? this.props.text : 
                         "Some placeholder text that will be changed down the road"}</p>

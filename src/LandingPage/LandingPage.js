@@ -2,6 +2,11 @@ import React from 'react';
 import Tile from './Tile/Tile'
 import Divider from './Divider/Divider';
 import './LandingPage.scss'
+import image1 from '../img/placeholder_image1.jpg';
+import image2 from '../img/placeholder_image2.jpg';
+import image3 from '../img/placeholder_image345.jpg';
+import image4 from '../img/extra_placeholder_image.jpg';
+
 
 class LandingPage extends React.Component {
     missionStatement = "Our goal is to provide companies with a way to accurately capture and " +
@@ -16,20 +21,19 @@ class LandingPage extends React.Component {
         if (this.pos > 3) {
             this.pos = 0;
         }
-        console.log(this.pos)
         return this.pos;
     }
 
     render() {
         return (
             <div>
-                <Tile imgSrc="/img/placeholder_image1.jpg" text={this.missionStatement} pos={this.putPos()}></Tile>
+                <Tile imgSrc={image1} text={this.missionStatement} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/placeholder_image2.jpg" text={this.solution} pos={this.putPos()}></Tile>
+                <Tile imgSrc={image2} text={this.solution} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/placeholder_image345.jpg" pos={this.putPos()}></Tile>
+                <Tile imgSrc={image3} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
-                <Tile imgSrc="/img/extra_placeholder_image.jpg"pos={this.putPos()}></Tile>
+                <Tile imgSrc={image4} pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
                 <div className="footer">
                     <p>Created by Ally Picker, Anukriti Goyal, Luke Allen, and Sagar Surana as part of the
