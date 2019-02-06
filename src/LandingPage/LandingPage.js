@@ -1,6 +1,7 @@
 import React from 'react';
 import Tile from './Tile/Tile'
 import Divider from './Divider/Divider';
+import './LandingPage.scss'
 
 class LandingPage extends React.Component {
     missionStatement = "Our goal is to provide companies with a way to accurately capture and " +
@@ -30,6 +31,12 @@ class LandingPage extends React.Component {
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
                 <Tile imgSrc="/img/extra_placeholder_image.jpg"pos={this.putPos()}></Tile>
                 <Divider fact="This is a placeholder fact that will tell the user important info"></Divider>
+                <div className="footer">
+                    <p>Created by Ally Picker, Anukriti Goyal, Luke Allen, and Sagar Surana as part of the
+                        University of Washington iSchool
+                    </p>
+                    <p>For questions or additional information, contact <span style={{'text-decoration': 'underline'}}>Arp32@uw.edu</span></p>
+                </div>
             </div>
         )
     }
