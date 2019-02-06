@@ -6,11 +6,11 @@ import LandingPage from './LandingPage/LandingPage'
 class App extends Component {
   render() {
     return (
-      <div>
-        <div id="Header">
+      <div className="page">
+        <div className="Header">
           <Header></Header>
         </div>
-        <div id="body">
+        <div className="body">
           <LandingPage></LandingPage>
         </div>
       </div>

@@ -1,0 +1,27 @@
+@import 'src/app';
+
+.divider {
+    width: 100vw;
+    margin-bottom: 100px;
+}
+
+.dividerText {
+    display: flex;
+    justify-content: center;
+}
+
+.dividerText p {
+    color: $primary;
+    font-size: 2rem;
+}
+
+.cornerBorder {
+    margin: 0;
+    border: $primary 1px solid;
+    width: 20vw;
+    position: relative;
+}
+
+.botRight {
+    right: -80vw;
+}
