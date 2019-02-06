@@ -20,7 +20,6 @@ class LandingPage extends React.Component {
         if (this.pos > 3) {
             this.pos = 0;
         }
-        console.log(this.pos)
         return this.pos;
     }
 
