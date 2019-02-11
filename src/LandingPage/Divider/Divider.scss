@@ -8,12 +8,13 @@
 .dividerText {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin: 0 20px;
 }
 
-.dividerText p {
+.dividerText p, .dividerText li {
     color: $primary;
-    font-size: 2rem;
+    // font-size: 2rem;
 }
 
 .cornerBorder {
