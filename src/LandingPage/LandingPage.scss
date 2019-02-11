@@ -3,9 +3,10 @@
 .footer {
     background-color: $primary;
     padding: 20px;
+    text-align: center;
 }
 
-.footer p, .footer li {
+.footer p {
     margin-bottom: 0;
     color: white;
 }
