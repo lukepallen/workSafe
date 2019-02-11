@@ -6,14 +6,14 @@ class Header extends React.Component {
         return (
             <div className="header">
                 <div className="header-title">
-                    <h3>Title</h3>
+                    <h3>workSafe</h3>
                 </div>
-                <div className="navbar">
+                {/* <div className="navbar">
                     <p className="link">Home</p>
                     <p className="link">Dashboard</p>
                     <p className="link selected">About</p>
                     <p className="link">Profile</p>
-                </div>
+                </div> */}
             </div>
         )
     }
