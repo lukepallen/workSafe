@@ -12,19 +12,19 @@ self.__precacheManifest = [
     "url": "/koolkids/static/js/runtime~main.9dc99b25.js"
   },
   {
-    "revision": "b759dc41fbbae0275193",
-    "url": "/koolkids/static/js/main.b759dc41.chunk.js"
+    "revision": "c7855262993bb59532d2",
+    "url": "/koolkids/static/js/main.c7855262.chunk.js"
   },
   {
     "revision": "ac9ae1edcdde807d9986",
     "url": "/koolkids/static/js/1.ac9ae1ed.chunk.js"
   },
   {
-    "revision": "b759dc41fbbae0275193",
-    "url": "/koolkids/static/css/main.3c89c4dc.chunk.css"
+    "revision": "c7855262993bb59532d2",
+    "url": "/koolkids/static/css/main.5ac71b74.chunk.css"
   },
   {
-    "revision": "73d131e46caf85a398ec73ca69a0f120",
+    "revision": "9adaf7681143501f3ed6575d749220d6",
     "url": "/koolkids/index.html"
   }
 ];
