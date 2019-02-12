@@ -11,11 +11,13 @@ class LandingPage extends React.Component {
     missionStatement = "Harassment in the workplace has increased over the past decade despite continued " +
             "efforts to implement inclusive policies and practices. One aspect of this is company’s failure " + 
             "to implement efficient reporting mechanisms that instill confidence that they will diligently " +
-            "evaluate and exact justice for any given report."
-    solution = "Our solution is an enterprise wide reporting system that allows employees to privately report " +
+            "evaluate and exact justice for any given report. " + 
+            "Our solution is an enterprise wide reporting system that allows employees to privately report " +
             "any identity based harassment or generalized aggressive behavior. Both HR personnel and reporters " +
             "can track how their report is being processed via this tool, adding a layer of accountability that " +
-            "was not present prior to this tool. "
+            "was not present prior to this tool."
+    contactInfo = "Researchers, workers, Human Resources experts, and individuals who would be willing to test the software " +
+            "or answer exploratory design questionnaires feel free to contact the team at Arp32@uw.edu!"
     pos = -1;
     putPos() {
         this.pos += 1;
@@ -31,8 +33,8 @@ class LandingPage extends React.Component {
             <div>
                 <Tile imgSrc={image1} text={this.missionStatement} pos={this.putPos()}></Tile>
                 <Divider fact={"teamInfo"}></Divider>
-                <Tile imgSrc={image2} text={this.solution} pos={this.putPos()}></Tile>
-                <Divider fact="contactInfo"></Divider>
+                <Tile imgSrc={image2} text={this.contactInfo} pos={this.putPos()}></Tile>
+                <Divider fact="placeholder"></Divider>
                 {/* <Tile imgSrc={image3} pos={this.putPos()}></Tile>
                 <Divider fact=></Divider>
                 <Tile imgSrc={image4} pos={this.putPos()}></Tile>

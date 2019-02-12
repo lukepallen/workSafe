@@ -33,9 +33,7 @@ class Divider extends React.Component {
                 :
                 <div className="dividerText">
                     <p>
-                        Researchers, workers, Human Resources experts, and individuals who would be willing to test the software 
-                        or answer exploratory design questionnaires feel free to contact the team at 
-                        <span style={{'text-decoration': 'underline'}}>Arp32@uw.edu</span>! 
+                        This is a placeholder fact for user research and data on MVP 
                     </p>
                 </div>}
                 <div className="cornerBorder botRight"></div>
