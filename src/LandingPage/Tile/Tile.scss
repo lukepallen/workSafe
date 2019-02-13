@@ -1,9 +1,5 @@
 @import 'src/app';
 
-.tile {
-    // margin-bottom: 100px;
-}
-
 .tileImage {
     width: 100vw;
 }
@@ -15,6 +11,10 @@
     background-image: linear-gradient(rgba(255,127,98,1), rgba(255,127,98,.75), rgba(255,127,98,0));
     padding: 15px;
     padding-bottom: 100px;
+}
+
+.text p {
+    margin: 0;
 }
 
 .right {

@@ -20,7 +20,9 @@ class App extends Component {
                 <Route exact path={ROUTES.home} component={Home}/>
                 <Route exact path={ROUTES.Dashboard} component={Dashboard}/>
                 <Route exact path={ROUTES.Profile} component={Profile}/>
-                <Redirect to={ROUTES.landing}/>
+                <Route exact path="/" render={() => (
+                  <Redirect to={ROUTES.landing}></Redirect>
+                )}/>
               </Switch>
             </div>
           </Router>
