@@ -1,7 +1,10 @@
 @import 'src/app';
 
-.tileImage {
-    width: 100vw;
+.tile {
+    margin: 50px 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
 }
 
 .text {
@@ -11,6 +14,7 @@
     background-image: linear-gradient(rgba(255,127,98,1), rgba(255,127,98,.75), rgba(255,127,98,0));
     padding: 15px;
     padding-bottom: 100px;
+    margin: 20px;
 }
 
 .text p {
@@ -19,18 +23,25 @@
 
 .right {
     position: relative;
-    top: -25vh;
+    // top: 5vh;
     left: 40%;
 }
 
 .center {
     position: relative;
-    top: -25vh;
+    // top: 5vh;
     left: 25%;
 }
 
 .left {
     position: relative;
-    top: -25vh;
+    // top: 5vh;
     left: 10%;
+}
+
+.parallax {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }

@@ -16,8 +16,7 @@ class Tile extends React.Component {
     }
     render() {
         return (
-            <div className="tile">
-                <img className="tileImage" src={this.props.imgSrc} alt="tile"></img>
+            <div className="tile parallax" style={{"backgroundImage": 'url(' + this.props.imgSrc + ')'}}>
                 <div className={"text " + this.getPos()}>
                     {this.props.text ? 
                         <div> 
