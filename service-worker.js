@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/koolkids/precache-manifest.f19e622802a08abf1e7bee49258cce4c.js"
+  "/koolkids/precache-manifest.4ccffb7d59ba339778085ca7ea534403.js"
 );
 
 workbox.clientsClaim();
