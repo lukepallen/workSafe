@@ -16,13 +16,11 @@ class App extends Component {
                 <Header></Header>
               </div>
               <Switch>
-                <Route exact path={ROUTES.landing} component={LandingPage}/>
-                <Route exact path={ROUTES.home} component={Home}/>
-                <Route exact path={ROUTES.Dashboard} component={Dashboard}/>
-                <Route exact path={ROUTES.Profile} component={Profile}/>
-                <Route exact path="/" render={() => (
-                  <Redirect to={ROUTES.landing}></Redirect>
-                )}/>
+                <Redirect exact from="/" to={ROUTES.landing}></Redirect>
+                <Route path={ROUTES.landing} component={LandingPage}/>
+                <Route path={ROUTES.home} component={Home}/>
+                <Route path={ROUTES.profile} component={Profile}/>
+                <Route path={ROUTES.dashboard} component={Dashboard}/>
               </Switch>
             </div>
           </Router>
