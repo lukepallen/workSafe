@@ -7,7 +7,7 @@ class SelectType extends React.Component {
     render() {
         return (
             <div className="buttonDiv">
-                <Link to={ROUTES.submit}><button className="btn btn-block">Employee</button></Link>
+                <Link to={ROUTES.report}><button className="btn btn-block">Employee</button></Link>
                 {/* <Link to=><button className="btn btn-block">Human Resources</button></Link> */}
             </div>
         )

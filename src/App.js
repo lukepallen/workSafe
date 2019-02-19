@@ -17,11 +17,11 @@ class App extends Component {
               </div>
               <div className="main">
                 <Switch>
-                  <Redirect exact from="/" to={ROUTES.landing}></Redirect>
                   <Route path={ROUTES.landing} component={LandingPage}/>
                   <Route path={ROUTES.home} component={Home}/>
                   <Route path={ROUTES.profile} component={Profile}/>
                   <Route path={ROUTES.dashboard} component={Dashboard}/>
+                  <Redirect to={ROUTES.landing}></Redirect>
                 </Switch>
               </div>
             </div>
