@@ -24,7 +24,6 @@ class LandingPage extends React.Component {
         if (this.pos > 3) {
             this.pos = 0;
         }
-        console.log(this.pos)
         return this.pos;
     }
 
@@ -41,7 +40,7 @@ class LandingPage extends React.Component {
                 <Divider fact=></Divider> */}
                 <div className="footer">
                     <p>Created by Ally Picker, Anukriti Goyal, Luke Allen, and Sagar Surana as part of the University of Washington iSchool</p>
-                    <p>For questions or additional information, contact <span style={{'text-decoration': 'underline'}}>Arp32@uw.edu</span></p>
+                    <p>For questions or additional information, contact <span style={{'textDecoration': 'underline'}}>Arp32@uw.edu</span></p>
                 </div>
             </div>
         )

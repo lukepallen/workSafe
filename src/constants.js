@@ -3,4 +3,5 @@ export const ROUTES = {
     home: "/home",
     dashboard: "/dashboard",
     profile: "/profile",
+    submit: "submit",
 }

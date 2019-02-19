@@ -11,17 +11,19 @@ class App extends Component {
     render() {
         return (
           <Router>
-            <div>
+            <div className="body">
               <div>
                 <Header></Header>
               </div>
-              <Switch>
-                <Redirect exact from="/" to={ROUTES.landing}></Redirect>
-                <Route path={ROUTES.landing} component={LandingPage}/>
-                <Route path={ROUTES.home} component={Home}/>
-                <Route path={ROUTES.profile} component={Profile}/>
-                <Route path={ROUTES.dashboard} component={Dashboard}/>
-              </Switch>
+              <div className="main">
+                <Switch>
+                  <Redirect exact from="/" to={ROUTES.landing}></Redirect>
+                  <Route path={ROUTES.landing} component={LandingPage}/>
+                  <Route path={ROUTES.home} component={Home}/>
+                  <Route path={ROUTES.profile} component={Profile}/>
+                  <Route path={ROUTES.dashboard} component={Dashboard}/>
+                </Switch>
+              </div>
             </div>
           </Router>
         );
