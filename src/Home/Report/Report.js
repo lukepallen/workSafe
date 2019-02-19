@@ -1,5 +1,6 @@
 import React from 'react';
-import firebase from '../../firebase';
+import Datepicker from 'react-bootstrap-date-picker';
+// import firebase from '../../firebase';
 import './Report.scss'
 
 class Report extends React.Component {
@@ -18,6 +19,12 @@ class Report extends React.Component {
                     <div className="name formSection">
                         <p className="label">Name</p>
                         <p>Test User</p>
+                    </div>
+                    <div className="dateTime formSection">
+                        <div className="date">
+                            <p className="label">Date of Occurence</p>
+                            <Datepicker/>
+                        </div>
                     </div>
                     <div className="location formSection">
                         <p className="label">Location</p>
