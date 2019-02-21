@@ -2,16 +2,24 @@ import React from 'react';
 import DateTime from 'react-datetime';
 // import firebase from '../../firebase';
 import './Report.scss'
+import moment  from 'moment';
 
 class Report extends React.Component {
-    state = {
-        Name: '',
-        Date: '',
-        Time: '',
-        Location: '',
-        Type: '',
-        Description: '',
+    constructor() {
+        super();
+        this.handleTimeChange = this.handleTimeChange.bind(this);
+        this.state = {
+            name: '',
+            datetime: '',
+            location: '',
+            type: '',
+            description: '',
+        }
     }
+    handleTimeChange(value) {
+        this.setState({datetime: moment.utc(value).format()})
+    }
+    checkDate = (curr) => curr - moment(new Date()) <= 0;
     render() {
         return (
             <div className="report">
@@ -20,17 +28,17 @@ class Report extends React.Component {
                         <p className="label">Name</p>
                         <p>Test User</p>
                     </div>
-                    <div className="dateTime formSection">
+                    <div className="dateTime formSection short">
                         <div className="date">
                             <p className="label">Date and Approximate Time of Occurence</p>
-                            <DateTime/>
+                            <DateTime onChange={this.handleTimeChange} isValidDate={this.checkDate} />
                         </div>
                     </div>
-                    <div className="location formSection">
+                    <div className="location formSection short">
                         <p className="label">Location</p>
                         <input type="text" className="form-control form-control-sm" aria-describedby="locationInput"></input>
                     </div>
-                    <div className="type formSection">
+                    <div className="type formSection short">
                         <p className="label">Type of Harassment</p>
                         <select type="text" className="form-control form-control-sm">
                             <option>Test type 1</option>
@@ -39,17 +47,17 @@ class Report extends React.Component {
                             <option>Test type 4</option>
                         </select>
                     </div>
-                    <div className="bystander formSection">
+                    <div className="bystander formSection short">
                         <p className="label">Bystanders Present</p>
                         <input type="text" className="form-control form-control-sm" aria-describedby="bystanderInput"></input>
                     </div>
-                    <div className="description">
+                    <div className="description formSection">
                         <p className="label">Description</p>
                         <textarea type="text" className="form-control form-control-sm" rows="3"></textarea>
                     </div>
-                    <div className="evidence formSection">
+                    <div className="evidence formSection short">
                         <p className="label">Additional Evidence</p>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1"></input>
+                        <input type="file" className="form-control-file" id="exampleFormControlFile1"></input>
                     </div>
                 </div>
                 <div className="submit"><p>Some stuff for submit</p></div>

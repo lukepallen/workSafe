@@ -18,7 +18,7 @@
 .submit {
     display: flex;
     justify-content: flex-end;
-}
+}  
 
 .label {
     font-weight: bold;
@@ -26,10 +26,18 @@
 
 .formSection {
     margin-bottom: 10px;
+}
+
+.short {
     width: calc(25vw - 50px);
 }
 
-/*!
+.name {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*! Date Time Customization 
  * https://github.com/YouCanBookMe/react-datetime
  */
 
