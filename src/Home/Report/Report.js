@@ -1,5 +1,6 @@
 import React from 'react';
 import DateTime from 'react-datetime';
+import FirebaseService from '../../Firebase/firebaseService';
 import './Report.scss';
 import '../../DateTime.scss';
 import moment  from 'moment';
@@ -14,6 +15,7 @@ class Report extends React.Component {
             type: '',
             description: '',
         }
+        this.firebase = new FirebaseService();
     }
     handleChange(key, value) {
         this.reportInfo[key] =  value;
@@ -64,7 +66,7 @@ class Report extends React.Component {
                     </div>
                 </div>
                 <div className="submit">
-                    <button className="btn" onClick={() => console.log(this.reportInfo)}>Submit</button>
+                    <button className="btn" onClick={() => this.firebase.add(this.reportInfo)}>Submit</button>
                 </div>
             </div>
         )
