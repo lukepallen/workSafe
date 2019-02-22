@@ -1,23 +1,22 @@
 import React from 'react';
 import DateTime from 'react-datetime';
-// import firebase from '../../firebase';
-import './Report.scss'
+import './Report.scss';
+import '../../DateTime.scss';
 import moment  from 'moment';
 
 class Report extends React.Component {
     constructor() {
         super();
-        this.handleTimeChange = this.handleTimeChange.bind(this);
-        this.state = {
-            name: '',
+        this.reportInfo = {
+            name: 'Test User',
             datetime: '',
             location: '',
             type: '',
             description: '',
         }
     }
-    handleTimeChange(value) {
-        this.setState({datetime: moment.utc(value).format()})
+    handleChange(key, value) {
+        this.reportInfo[key] =  value;
     }
     checkDate = (curr) => curr - moment(new Date()) <= 0;
     render() {
@@ -31,16 +30,18 @@ class Report extends React.Component {
                     <div className="dateTime formSection short">
                         <div className="date">
                             <p className="label">Date and Approximate Time of Occurence</p>
-                            <DateTime onChange={this.handleTimeChange} isValidDate={this.checkDate} />
+                            <DateTime onChange={value => this.handleChange("datetime", moment.utc(value).format())} isValidDate={this.checkDate} />
                         </div>
                     </div>
                     <div className="location formSection short">
                         <p className="label">Location</p>
-                        <input type="text" className="form-control form-control-sm" aria-describedby="locationInput"></input>
+                        <input type="text" className="form-control form-control-sm" aria-describedby="locationInput"
+                                onChange={evt => this.handleChange("location", evt.currentTarget.value)}></input>
                     </div>
                     <div className="type formSection short">
                         <p className="label">Type of Harassment</p>
-                        <select type="text" className="form-control form-control-sm">
+                        <select type="text" className="form-control form-control-sm" 
+                                onChange={evt => this.handleChange("type", evt.currentTarget.value)}>
                             <option>Test type 1</option>
                             <option>Test type 2</option>
                             <option>Test type 3</option>
@@ -48,19 +49,23 @@ class Report extends React.Component {
                         </select>
                     </div>
                     <div className="bystander formSection short">
-                        <p className="label">Bystanders Present</p>
-                        <input type="text" className="form-control form-control-sm" aria-describedby="bystanderInput"></input>
+                        <p className="label">Bystanders Present *</p>
+                        <input type="text" className="form-control form-control-sm" aria-describedby="bystanderInput"
+                                onChange={evt => this.handleChange("bystanders", evt.currentTarget.value)}></input>
                     </div>
                     <div className="description formSection">
-                        <p className="label">Description</p>
-                        <textarea type="text" className="form-control form-control-sm" rows="3"></textarea>
+                        <p className="label">Description *</p>
+                        <textarea type="text" className="form-control form-control-sm" rows="2"
+                                onChange={evt => this.handleChange("description", evt.currentTarget.value)}></textarea>
                     </div>
                     <div className="evidence formSection short">
                         <p className="label">Additional Evidence</p>
                         <input type="file" className="form-control-file" id="exampleFormControlFile1"></input>
                     </div>
                 </div>
-                <div className="submit"><p>Some stuff for submit</p></div>
+                <div className="submit">
+                    <button className="btn" onClick={() => console.log(this.reportInfo)}>Submit</button>
+                </div>
             </div>
         )
     }
