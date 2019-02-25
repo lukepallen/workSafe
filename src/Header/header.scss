@@ -2,7 +2,7 @@
 
 .header {
     font-size: 1.25rem;
-    margin-bottom: 50px;
+    height: 15vh;
 }
 
 .header-title {
@@ -16,7 +16,20 @@
     justify-content: space-around;
 }
 
+.link {
+    color: black;
+    text-decoration: none;
+    padding: 0 2px 2px 2px;
+
+    &:hover {
+        color: $secondary;
+        text-decoration: none;
+        border-bottom: 1px solid $secondary;
+    }
+}
+
+
 .selected {
-    color: #E1DFCE;
-    text-decoration: underline;
+    color: $primary;
+    border-bottom: 1px solid $primary;
 }
