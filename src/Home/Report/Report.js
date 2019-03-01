@@ -14,6 +14,7 @@ class Report extends React.Component {
             location: '',
             type: '',
             description: '',
+            status: "Awaiting Review",
         }
         this.firebase = new FirebaseService();
     }
@@ -42,12 +43,15 @@ class Report extends React.Component {
                     </div>
                     <div className="type formSection short">
                         <p className="label">Type of Harassment</p>
-                        <select type="text" className="form-control form-control-sm" 
+                        <select type="text" className="form-control form-control-sm"
                                 onChange={evt => this.handleChange("type", evt.currentTarget.value)}>
-                            <option>Test type 1</option>
-                            <option>Test type 2</option>
-                            <option>Test type 3</option>
-                            <option>Test type 4</option>
+                            <option value="" selected disabled hidden>Select Harassment Type</option>
+                            <option>Sexual Harassment</option>
+                            <option>Workplace Bullying</option>
+                            <option>Retaliation</option>
+                            <option>Ageism</option>
+                            <option>Racial Harassment</option>
+                            <option>Disability-Based Harassment</option>
                         </select>
                     </div>
                     <div className="bystander formSection short">
