@@ -1,15 +1,15 @@
 {
-  "main.css": "/koolkids/static/css/main.9f6c6d1a.chunk.css",
-  "main.js": "/koolkids/static/js/main.83010a92.chunk.js",
-  "main.js.map": "/koolkids/static/js/main.83010a92.chunk.js.map",
-  "static/js/1.b2829d6b.chunk.js": "/koolkids/static/js/1.b2829d6b.chunk.js",
-  "static/js/1.b2829d6b.chunk.js.map": "/koolkids/static/js/1.b2829d6b.chunk.js.map",
-  "runtime~main.js": "/koolkids/static/js/runtime~main.9dc99b25.js",
-  "runtime~main.js.map": "/koolkids/static/js/runtime~main.9dc99b25.js.map",
-  "static/css/main.9f6c6d1a.chunk.css.map": "/koolkids/static/css/main.9f6c6d1a.chunk.css.map",
-  "static/media/placeholder_image1.jpg": "/koolkids/static/media/placeholder_image1.b6028d25.jpg",
-  "static/media/placeholder_image2.jpg": "/koolkids/static/media/placeholder_image2.a01eeb56.jpg",
-  "index.html": "/koolkids/index.html",
-  "precache-manifest.7cbac6e50b7a910f7ca754909dba1864.js": "/koolkids/precache-manifest.7cbac6e50b7a910f7ca754909dba1864.js",
-  "service-worker.js": "/koolkids/service-worker.js"
+  "main.css": "/workSafeEmployee/static/css/main.9f6c6d1a.chunk.css",
+  "main.js": "/workSafeEmployee/static/js/main.4addc01a.chunk.js",
+  "main.js.map": "/workSafeEmployee/static/js/main.4addc01a.chunk.js.map",
+  "static/js/1.78c2bf39.chunk.js": "/workSafeEmployee/static/js/1.78c2bf39.chunk.js",
+  "static/js/1.78c2bf39.chunk.js.map": "/workSafeEmployee/static/js/1.78c2bf39.chunk.js.map",
+  "runtime~main.js": "/workSafeEmployee/static/js/runtime~main.e19fc921.js",
+  "runtime~main.js.map": "/workSafeEmployee/static/js/runtime~main.e19fc921.js.map",
+  "static/css/main.9f6c6d1a.chunk.css.map": "/workSafeEmployee/static/css/main.9f6c6d1a.chunk.css.map",
+  "static/media/placeholder_image1.jpg": "/workSafeEmployee/static/media/placeholder_image1.b6028d25.jpg",
+  "static/media/placeholder_image2.jpg": "/workSafeEmployee/static/media/placeholder_image2.a01eeb56.jpg",
+  "index.html": "/workSafeEmployee/index.html",
+  "precache-manifest.88fb7fe9fb2b1b17eeb34763c3e8b4aa.js": "/workSafeEmployee/precache-manifest.88fb7fe9fb2b1b17eeb34763c3e8b4aa.js",
+  "service-worker.js": "/workSafeEmployee/service-worker.js"
 }
