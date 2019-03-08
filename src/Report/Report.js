@@ -70,7 +70,7 @@ class Report extends React.Component {
                     </div>
                 </div>
                 <div className="submit">
-                    <button className="btn" onClick={() => this.firebase.add(this.reportInfo)}>Submit</button>
+                    <button className="btn submitBtn" onClick={() => this.firebase.add(this.reportInfo)}>Submit</button>
                 </div>
             </div>
         )
