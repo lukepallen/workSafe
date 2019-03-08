@@ -11,9 +11,9 @@ class Header extends React.Component {
                     <h3>workSafe</h3>
                 </div>
                 <div className="navbar">
-                    <NavLink to={ROUTES.home} activeClassName="selected" className="link">Home</NavLink>
+                    <NavLink to={ROUTES.report} activeClassName="selected" className="link">Report</NavLink>
                     <NavLink exact={true} to={ROUTES.dashboard} activeClassName="selected" className="link">Dashboard</NavLink>
-                    <NavLink to={ROUTES.landing} activeClassName="selected" className="link">About</NavLink>
+                    {/* <NavLink to={ROUTES.landing} activeClassName="selected" className="link">About</NavLink> */}
                     <NavLink to={ROUTES.profile} activeClassName="selected" className="link">Profile</NavLink>
                 </div>
             </div>

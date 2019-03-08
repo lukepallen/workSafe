@@ -1,8 +1,8 @@
 import React from 'react';
 import DateTime from 'react-datetime';
-import FirebaseService from '../../Firebase/firebaseService';
+import FirebaseService from '../Firebase/firebaseService';
 import './Report.scss';
-import '../../DateTime.scss';
+import '../DateTime.scss';
 import moment  from 'moment';
 
 class Report extends React.Component {
@@ -70,7 +70,13 @@ class Report extends React.Component {
                     </div>
                 </div>
                 <div className="submit">
-                    <button className="btn" onClick={() => this.firebase.add(this.reportInfo)}>Submit</button>
+                    <button className="btn" onClick={() => {
+                        this.firebase.add(this.reportInfo)
+                        this.firebase.getAll().then(data => {
+                            console.log(data)
+                            console.log(data.length)
+                        })
+                    }}>Submit</button>
                 </div>
             </div>
         )

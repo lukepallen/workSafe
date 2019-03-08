@@ -3,7 +3,7 @@ import {HashRouter as Router, Switch, Redirect, Route} from 'react-router-dom';
 import {ROUTES} from './constants';
 import Header from './Header/Header';
 import LandingPage from './LandingPage/LandingPage';
-import Home from './Home/Home';
+import Report from './Report/Report';
 import Dashboard from './Dashboard/Dashboard';
 import Profile from './Profile/Profile';
 
@@ -18,7 +18,7 @@ class App extends Component {
               <div className="main">
                 <Switch>
                   <Route path={ROUTES.landing} component={LandingPage}/>
-                  <Route path={ROUTES.home} component={Home}/>
+                  <Route path={ROUTES.report} component={Report}/>
                   <Route path={ROUTES.profile} component={Profile}/>
                   <Route path={ROUTES.dashboard} component={Dashboard}/>
                   <Redirect to={ROUTES.landing}></Redirect>
