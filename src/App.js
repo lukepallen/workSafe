@@ -17,11 +17,11 @@ class App extends Component {
               </div>
               <div className="main">
                 <Switch>
-                  <Route path={ROUTES.landing} component={LandingPage}/>
+                  {/* <Route path={ROUTES.landing} component={LandingPage}/> */}
                   <Route path={ROUTES.report} component={Report}/>
                   <Route path={ROUTES.profile} component={Profile}/>
                   <Route path={ROUTES.dashboard} component={Dashboard}/>
-                  <Redirect to={ROUTES.landing}></Redirect>
+                  <Redirect to={ROUTES.report}></Redirect>
                 </Switch>
               </div>
             </div>

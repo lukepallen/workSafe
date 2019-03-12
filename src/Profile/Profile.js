@@ -13,7 +13,7 @@ class Profile extends React.Component {
         this.fetchData();
     }
     fetchData() {
-        this.firebase.get("Test User").then(data => {
+        this.firebase.get("Jane Doe").then(data => {
             console.log(data);
             let rows = data.map(row => {
                 let content

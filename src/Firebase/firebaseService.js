@@ -6,11 +6,7 @@ export default class FirebaseService {
     }
 
     add(data) {
-        this.db.add(data).then(
-            docRef => {
-                console.log(docRef.id)
-            }        
-        );
+        return this.db.add(data);
     }
 
     get(name) {
