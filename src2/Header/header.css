@@ -1,0 +1,23 @@
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 200;
+    color: rgb(6, 99, 116);
+    font-size: 4rem; 
+    text-align: center;
+}
+
+.tabs {
+    text-align: center;
+    background-color: transparent;
+}
+
+.tab {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    border: none;
+    background-color: transparent;
+}
+
+img {
+    width: 3rem;
+}

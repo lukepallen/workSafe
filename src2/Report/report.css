@@ -1,0 +1,17 @@
+.form div {
+    margin: 2rem;
+
+}
+
+.form {
+    margin-top: 5rem;
+}
+
+h3 {
+    font-size: 2rem;
+    text-align: left;
+}
+
+.response p {
+    color: rgb(6, 99, 116);
+}

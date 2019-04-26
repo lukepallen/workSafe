@@ -1,0 +1,75 @@
+#table1, #table2 {
+    display: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 2rem; 
+    margin-right:2rem;
+    align-self: center;
+    margin-top: 5rem;
+}
+
+.content {
+    margin: .4rem;
+    color: black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.content p {
+    font-size: .8rem;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    vertical-align: baseline;
+}
+
+.head h2, .head p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.AwaitingReview {
+    color: red;
+}
+
+.Validated {
+    color: lightgreen;
+}
+
+.Mediation {
+    color: brown;
+} 
+
+.FormalConsequences {
+    color: blueviolet;
+}
+
+.FinalInvestigativeReportSubmitted {
+    color: yellow;
+}
+
+.Resolved {
+    color: green;
+}
+
+.rows {
+    background-image: url("../images/bluepat2.jpg");
+    height: 8rem;
+    width: 20rem;
+    margin: 2rem;
+    padding: 0px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0px 1px 1px 1px #00000062;
+    
+}
+
+#table1 button, #table2 button {
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
