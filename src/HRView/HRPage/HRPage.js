@@ -2,15 +2,16 @@ import React, { Component } from 'react';
 import './HRPage.css';
 import Header from '../Header/header.js'
 import Report from '../Report/report.js';
+import {ROUTES} from '../../constants';
 import { Route, Switch, Redirect } from 'react-router-dom';
-import FirebaseService from '../Firebase/firebaseService';
+import FirebaseService from '../../Firebase/firebaseService';
 
 export default class HRPage extends Component {
     render() {
         return (
             <div>
                 <Switch>
-                    <Route path="/report-page" component={Report}></Route>
+                    <Route path={ROUTES.hrReport} component={Report}></Route>
                 </Switch>
                 <Header></Header>
                 <ReportTable></ReportTable>

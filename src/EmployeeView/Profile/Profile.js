@@ -1,6 +1,6 @@
 import React from 'react';
 import './Profile.scss'
-import FirebaseService from '../Firebase/firebaseService';
+import FirebaseService from '../../Firebase/firebaseService';
 import Card from './Card/Card';
 
 class Profile extends React.Component {

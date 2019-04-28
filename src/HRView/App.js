@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import HRPage from './HRPage/HRPage'
 
-class App extends Component {
+class HRApp extends Component {
   render() {
     return (
       <HRPage></HRPage>
@@ -10,4 +10,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default HRApp;

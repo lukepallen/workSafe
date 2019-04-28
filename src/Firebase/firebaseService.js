@@ -28,4 +28,15 @@ export default class FirebaseService {
             }
         );
     }
+
+    
+    getByStatus(status) {
+        let data = []
+        return this.db.where("status", "==", status).get().then(
+            snapshot => {
+                snapshot.forEach(snap => data.push(snap.data()));
+                return data;
+            }
+        );
+    }
 }

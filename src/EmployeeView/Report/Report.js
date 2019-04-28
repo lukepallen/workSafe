@@ -1,8 +1,8 @@
 import React from 'react';
 import DateTime from 'react-datetime';
-import FirebaseService from '../Firebase/firebaseService';
+import FirebaseService from '../../Firebase/firebaseService';
 import {Redirect} from 'react-router-dom';
-import {ROUTES} from '../constants';
+import {ROUTES} from '../../constants';
 import moment  from 'moment';
 import './Report.scss';
 import '../DateTime.scss';
