@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/workSafeEmployee/precache-manifest.ce306e93449323bb3d520f5a4f7b1d7e.js"
+  "/workSafe/precache-manifest.4f5dbc95cec0608f136c6149e66f3644.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/workSafeEmployee/index.html", {
+workbox.routing.registerNavigationRoute("/workSafe/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
