@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Switch, Redirect, Route} from 'react-router-dom';
+import {HashRouter as Redirect, Route} from 'react-router-dom';
 import {ROUTES} from '../constants';
 import Header from './Header/Header';
 import Report from './Report/Report';
