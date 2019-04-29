@@ -9,14 +9,13 @@ export default class Auth {
   expiresAt;
   userId;
   user = new BehaviorSubject();
-  auth0Manage;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
-    scope: 'openid profile read:current_user update:current_user update:users create:current_user_metadata update:current_user_metadata create:users_app_metadata update:users_app_metadata'
+    scope: 'openid'
   });
 
   constructor() {
@@ -38,7 +37,7 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
       } else if (err) {
-        history.replace('/home');
+        history.replace('/employee');
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -62,7 +61,6 @@ export default class Auth {
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
-    this.getManagement();
 
     if (this.accessToken) {
       this.auth0.client.userInfo(this.accessToken, (err, user) => {
@@ -80,8 +78,7 @@ export default class Auth {
         }
       })
     }
-    // navigate to the home route
-    history.replace('/home');
+    history.replace('/employee');
   }
 
   renewSession() {
@@ -120,26 +117,26 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 
-  updateMetadata() {
-    let metadata = {
-      "enrolled": true
-    }
-    return new Promise(resolve => {
-      this.auth0Manage.patchUserMetadata(this.userId, metadata, (err, res) => {
-        if (err) {
-          resolve({error: err});
-        } else {
-          resolve({results: res});
-        }
-      });
-    });
+  // updateMetadata() {
+  //   let metadata = {
+  //     "enrolled": true
+  //   }
+  //   return new Promise(resolve => {
+  //     this.auth0Manage.patchUserMetadata(this.userId, metadata, (err, res) => {
+  //       if (err) {
+  //         resolve({error: err});
+  //       } else {
+  //         resolve({results: res});
+  //       }
+  //     });
+  //   });
     
-  }
+  // }
 
-  getManagement() {
-    this.auth0Manage = new auth0.Management({
-      domain: AUTH_CONFIG.domain,
-      token: AUTH_CONFIG.managementToken
-    });
-  }
+  // getManagement() {
+  //   this.auth0Manage = new auth0.Management({
+  //     domain: AUTH_CONFIG.domain,
+  //     token: AUTH_CONFIG.managementToken
+  //   });
+  // }
 }
