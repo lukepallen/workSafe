@@ -17,10 +17,11 @@ const handleAuthentication = ({location}) => {
 
 export default class App extends Component {
     componentDidMount() {
-        if (!auth.isAuthenticated()) {
-            auth.login();
-        } else if (localStorage.get('isLoggedIn') === 'true') {
-            auth.renewSession();
+        let splitUrl = window.location.href.split("#");
+        if (splitUrl[0].includes('/callback')) {
+            let newUrl = splitUrl[0].replace('/callback', '/#/callback');
+            let newHash = splitUrl[1].replace('/', '#');
+            window.location.href = newUrl + newHash;
         }
     }
     render() {
@@ -33,8 +34,33 @@ export default class App extends Component {
                         handleAuthentication(props);
                         return <Callback {...props} />
                     }}/>
+                    <Route path={ROUTES.login} render={() => {
+                        return (
+                            <div style={loginStyle}>
+                                <div>
+                                    <h4>Login as:</h4>
+                                    <button className="btn btn-outline-primary mr-2" onClick={() => {
+                                        auth.setEmployeeType("employee");
+                                        auth.login();
+                                    }}>Employee</button>
+                                    <button className="btn btn-outline-primary" onClick={() => {
+                                        auth.setEmployeeType("hr");
+                                        auth.login();
+                                    }}>HR</button>
+                                </div>
+                            </div>
+                        )
+                    }}/>
                 </div>
             </Router>
         );
     }
 }
+
+const loginStyle = {
+    height: "66vh",
+    width: "100vw",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+};

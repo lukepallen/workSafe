@@ -9,6 +9,7 @@ export default class Auth {
   expiresAt;
   userId;
   user = new BehaviorSubject();
+  empType;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -28,16 +29,20 @@ export default class Auth {
     this.renewSession = this.renewSession.bind(this);
   }
 
+  setEmployeeType(type) {
+    this.empType = type;
+  }
+
   login() {
     this.auth0.authorize();
   }
 
   handleAuthentication() {
-    this.auth0.parseHash((err, authResult) => {
+    this.auth0.parseHash({hash: window.location.hash.split("callback")[1]}, (err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
       } else if (err) {
-        history.replace('/employee');
+        history.replace('/#/' + this.empType);
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -68,17 +73,18 @@ export default class Auth {
           console.log(err)
         } else {
           this.userId = user.sub;
-          this.auth0Manage.getUser(this.userId, (err, fullUser) => {
-            if (err) {
-              console.log(err);
-            } else {
-              this.user.next(fullUser);
-            }
-          })
+          // this.auth0Manage.getUser(this.userId, (err, fullUser) => {
+          //   if (err) {
+          //     console.log(err);
+          //   } else {
+          //     this.user.next(fullUser);
+          //   }
+          // });
         }
       })
     }
-    history.replace('/employee');
+    console.log(this.empType);
+    history.replace(this.empType);
   }
 
   renewSession() {
@@ -107,7 +113,7 @@ export default class Auth {
     });
 
     // navigate to the home route
-    history.replace('/home');
+    history.replace('/');
   }
 
   isAuthenticated() {
