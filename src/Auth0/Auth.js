@@ -1,4 +1,4 @@
-import history from '../history';
+// import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 import { BehaviorSubject } from 'rxjs';
@@ -10,6 +10,7 @@ export default class Auth {
   userId;
   user = new BehaviorSubject();
   empType;
+  pageUrl;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -27,9 +28,12 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.pageUrl = 'http://localhost:3000/#/'
+    this.empType = localStorage.getItem("empType");
   }
 
   setEmployeeType(type) {
+    localStorage.setItem("empType", type);
     this.empType = type;
   }
 
@@ -42,7 +46,7 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
       } else if (err) {
-        history.replace('/#/' + this.empType);
+        window.location.href = this.pageUrl + this.empType;
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -83,8 +87,7 @@ export default class Auth {
         }
       })
     }
-    console.log(this.empType);
-    history.replace(this.empType);
+    window.location.href = this.pageUrl + this.empType;
   }
 
   renewSession() {
@@ -113,7 +116,7 @@ export default class Auth {
     });
 
     // navigate to the home route
-    history.replace('/');
+    window.location.href = this.pageUrl;
   }
 
   isAuthenticated() {

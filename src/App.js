@@ -6,9 +6,7 @@ import {ROUTES} from './constants';
 import Callback from './Callback/Callback';
 import Auth from './Auth0/Auth';
 
-const auth = new Auth();
-
-const handleAuthentication = ({location}) => {
+const handleAuthentication = ({location}, auth) => {
     console.log(location);
     if (/access_token|id_token|error/.test(location.hash)) {
         auth.handleAuthentication();
@@ -16,6 +14,12 @@ const handleAuthentication = ({location}) => {
 }
 
 export default class App extends Component {
+    auth;
+
+    constructor() {
+        super();
+        this.auth = new Auth();
+    }
     componentDidMount() {
         let splitUrl = window.location.href.split("#");
         if (splitUrl[0].includes('/callback')) {
@@ -31,7 +35,7 @@ export default class App extends Component {
                     <Route path={ROUTES.employee} component={EmpApp}/>
                     <Route path={ROUTES.hr} component={HRApp}/>
                     <Route path={ROUTES.callback} render={(props) => {
-                        handleAuthentication(props);
+                        handleAuthentication(props, this.auth);
                         return <Callback {...props} />
                     }}/>
                     <Route path={ROUTES.login} render={() => {
@@ -40,12 +44,12 @@ export default class App extends Component {
                                 <div>
                                     <h4>Login as:</h4>
                                     <button className="btn btn-outline-primary mr-2" onClick={() => {
-                                        auth.setEmployeeType("employee");
-                                        auth.login();
+                                        this.auth.setEmployeeType("employee");
+                                        this.auth.login();
                                     }}>Employee</button>
                                     <button className="btn btn-outline-primary" onClick={() => {
-                                        auth.setEmployeeType("hr");
-                                        auth.login();
+                                        this.auth.setEmployeeType("hr");
+                                        this.auth.login();
                                     }}>HR</button>
                                 </div>
                             </div>
