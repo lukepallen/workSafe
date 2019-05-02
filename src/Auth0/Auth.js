@@ -28,7 +28,7 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
-    this.pageUrl = 'http://localhost:3000/#/'
+    this.pageUrl = 'https://lukepallen.github.io/workSafe/#/';
     this.empType = localStorage.getItem("empType");
   }
 
