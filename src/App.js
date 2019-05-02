@@ -1,18 +1,70 @@
 import React, { Component } from 'react';
-import {HashRouter as Router, Switch, Route} from 'react-router-dom';
+import {HashRouter as Router, Route} from 'react-router-dom';
 import EmpApp from './EmployeeView/App';
 import HRApp from './HRView/App';
 import {ROUTES} from './constants';
+import Callback from './Callback/Callback';
+import Auth from './Auth0/Auth';
+
+const handleAuthentication = ({location}, auth) => {
+    console.log(location);
+    if (/access_token|id_token|error/.test(location.hash)) {
+        auth.handleAuthentication();
+    }
+}
 
 export default class App extends Component {
+    auth;
+
+    constructor() {
+        super();
+        this.auth = new Auth();
+    }
+    componentDidMount() {
+        let splitUrl = window.location.href.split("#");
+        if (splitUrl[0].includes('/callback')) {
+            let newUrl = splitUrl[0].replace('/callback', '/#/callback');
+            let newHash = splitUrl[1].replace('/', '#');
+            window.location.href = newUrl + newHash;
+        }
+    }
     render() {
         return (
             <Router>
                 <div>
                     <Route path={ROUTES.employee} component={EmpApp}/>
                     <Route path={ROUTES.hr} component={HRApp}/>
+                    <Route path={ROUTES.callback} render={(props) => {
+                        handleAuthentication(props, this.auth);
+                        return <Callback {...props} />
+                    }}/>
+                    <Route path={ROUTES.login} render={() => {
+                        return (
+                            <div style={loginStyle}>
+                                <div>
+                                    <h4>Login as:</h4>
+                                    <button className="btn btn-outline-primary mr-2" onClick={() => {
+                                        this.auth.setEmployeeType("employee");
+                                        this.auth.login();
+                                    }}>Employee</button>
+                                    <button className="btn btn-outline-primary" onClick={() => {
+                                        this.auth.setEmployeeType("hr");
+                                        this.auth.login();
+                                    }}>HR</button>
+                                </div>
+                            </div>
+                        )
+                    }}/>
                 </div>
             </Router>
         );
     }
 }
+
+const loginStyle = {
+    height: "66vh",
+    width: "100vw",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
+};
