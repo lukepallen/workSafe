@@ -1,4 +1,3 @@
-import history from '../history';
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 import { BehaviorSubject } from 'rxjs';
@@ -21,7 +20,6 @@ export default class Auth {
   });
 
   constructor() {
-    console.log(ROUTES.url);
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
