@@ -50,7 +50,7 @@ class Report extends React.Component {
                 </div> 
                 : 
                 <div className="buffer">
-                    <div className="form">
+                    <div className="empForm">
                         <div className="name formSection">
                             <p className="label">Name</p>
                             <p>{this.reportInfo.name}</p>
