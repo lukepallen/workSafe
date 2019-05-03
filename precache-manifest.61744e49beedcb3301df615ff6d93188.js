@@ -20,19 +20,19 @@ self.__precacheManifest = [
     "url": "/workSafe/static/js/runtime~main.2eedd4da.js"
   },
   {
-    "revision": "8ea81d0f6d820a341065",
-    "url": "/workSafe/static/js/main.8ea81d0f.chunk.js"
+    "revision": "ab41f83018ecdddd6bea",
+    "url": "/workSafe/static/js/main.ab41f830.chunk.js"
   },
   {
     "revision": "72fc43872d8e48881c0f",
     "url": "/workSafe/static/js/1.72fc4387.chunk.js"
   },
   {
-    "revision": "8ea81d0f6d820a341065",
+    "revision": "ab41f83018ecdddd6bea",
     "url": "/workSafe/static/css/main.9039e345.chunk.css"
   },
   {
-    "revision": "f4f208544555fe69511e07d3472bd4a2",
+    "revision": "fda9dc6e5c134221be9c70e3e287ac26",
     "url": "/workSafe/index.html"
   }
 ];
