@@ -2,6 +2,7 @@
 import auth0 from 'auth0-js';
 import { AUTH_CONFIG } from './auth0-variables';
 import { BehaviorSubject } from 'rxjs';
+import { ROUTES } from '../constants'; 
 
 export default class Auth {
   accessToken;
@@ -10,7 +11,6 @@ export default class Auth {
   userId;
   user = new BehaviorSubject();
   empType;
-  pageUrl;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
@@ -21,6 +21,7 @@ export default class Auth {
   });
 
   constructor() {
+    console.log(ROUTES.url);
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -28,7 +29,6 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
-    this.pageUrl = 'https://lukepallen.github.io/workSafe/#/';
     this.empType = localStorage.getItem("empType");
   }
 
@@ -46,7 +46,7 @@ export default class Auth {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
       } else if (err) {
-        window.location.href = this.pageUrl + this.empType;
+        window.location.href = ROUTES.url + '#/' + this.empType;
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -87,7 +87,7 @@ export default class Auth {
         }
       })
     }
-    window.location.href = this.pageUrl + this.empType;
+    window.location.href = ROUTES.url + '#/' + this.empType;
   }
 
   renewSession() {
@@ -116,7 +116,7 @@ export default class Auth {
     });
 
     // navigate to the home route
-    window.location.href = this.pageUrl;
+    window.location.href = ROUTES.url;
   }
 
   isAuthenticated() {

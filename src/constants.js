@@ -1,3 +1,5 @@
+// let url = 
+
 export const ROUTES = {
     login: "/",
     callback: "/callback",
@@ -7,5 +9,6 @@ export const ROUTES = {
     profile: "/employee/profile",
     empReport: "/employee/report",
     hr: "/hr",
-    hrReport: "hr/report-page"
+    hrReport: "hr/report-page",
+    url: process.env.NODE_ENV === 'development' ? 'http://localhost:3000/' : 'https://lukepallen.github.io/workSafe/'
 }

@@ -38,7 +38,7 @@ export default class App extends Component {
                         handleAuthentication(props, this.auth);
                         return <Callback {...props} />
                     }}/>
-                    <Route path={ROUTES.login} render={() => {
+                    <Route exact path={ROUTES.login} render={() => {
                         return (
                             <div style={loginStyle}>
                                 <div>
