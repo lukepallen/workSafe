@@ -7,7 +7,6 @@ import Callback from './Callback/Callback';
 import Auth from './Auth0/Auth';
 
 const handleAuthentication = ({location}, auth) => {
-    console.log(location);
     if (/access_token|id_token|error/.test(location.hash)) {
         auth.handleAuthentication();
     }
@@ -22,10 +21,8 @@ export default class App extends Component {
     }
     componentDidMount() {
         let splitUrl = window.location.href.split("#");
-        if (splitUrl[0].includes('/callback')) {
-            let newUrl = splitUrl[0].replace('/callback', '/#/callback');
-            let newHash = splitUrl[1].replace('/', '#');
-            window.location.href = newUrl + newHash;
+        if (splitUrl[1].includes('/access_token')) {
+            window.location.href = splitUrl[0] + '#/callback#' + splitUrl[1];
         }
     }
     render() {

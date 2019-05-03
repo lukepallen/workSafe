@@ -1,5 +1,3 @@
-// let url = 
-
 export const ROUTES = {
     login: "/",
     callback: "/callback",
