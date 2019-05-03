@@ -1,7 +1,7 @@
 {
-  "main.css": "/workSafe/static/css/main.9039e345.chunk.css",
-  "main.js": "/workSafe/static/js/main.ab41f830.chunk.js",
-  "main.js.map": "/workSafe/static/js/main.ab41f830.chunk.js.map",
+  "main.css": "/workSafe/static/css/main.a7ff04ac.chunk.css",
+  "main.js": "/workSafe/static/js/main.83de86e0.chunk.js",
+  "main.js.map": "/workSafe/static/js/main.83de86e0.chunk.js.map",
   "static/js/1.72fc4387.chunk.js": "/workSafe/static/js/1.72fc4387.chunk.js",
   "static/js/1.72fc4387.chunk.js.map": "/workSafe/static/js/1.72fc4387.chunk.js.map",
   "runtime~main.js": "/workSafe/static/js/runtime~main.2eedd4da.js",
@@ -10,8 +10,8 @@
   "static/media/loading.svg": "/workSafe/static/media/loading.c5590569.svg",
   "static/media/HRPage.css": "/workSafe/static/media/bluepat2.1c05d40e.jpg",
   "static/media/validated.png": "/workSafe/static/media/validated.2143001a.png",
-  "static/css/main.9039e345.chunk.css.map": "/workSafe/static/css/main.9039e345.chunk.css.map",
+  "static/css/main.a7ff04ac.chunk.css.map": "/workSafe/static/css/main.a7ff04ac.chunk.css.map",
   "index.html": "/workSafe/index.html",
-  "precache-manifest.61744e49beedcb3301df615ff6d93188.js": "/workSafe/precache-manifest.61744e49beedcb3301df615ff6d93188.js",
+  "precache-manifest.cb6c3108bc5f79e49bb4bca3d1cb4d35.js": "/workSafe/precache-manifest.cb6c3108bc5f79e49bb4bca3d1cb4d35.js",
   "service-worker.js": "/workSafe/service-worker.js"
 }
