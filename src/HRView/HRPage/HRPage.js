@@ -74,7 +74,7 @@ class ReportTable extends Component {
 
     render() {
         if (this.state.shouldRedirect) {
-            return <Redirect push to={'/report-page'} />
+            return <Redirect push to={'../Report/report.js'} />
         }
         return (
             <div id="table1">
@@ -127,7 +127,7 @@ class ResolvedTable extends Component {
                         </button>
                     )
                     if (this.state.shouldRedirect) {
-                        return <Redirect push to={'/report-page'} />
+                        return <Redirect push to={'../Report/report.js'} />
                     }
                 }
                 this.handleData(currentRows);
