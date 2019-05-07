@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import reports from '../images/reports.png';
-import validated from '../images/validated.png'
 import './header.css'
 import {NavLink} from 'react-router-dom';
 import {ROUTES} from "../../constants";
