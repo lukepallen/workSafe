@@ -12,7 +12,7 @@ class Header extends React.Component {
                 </div>
                 <div className="navbar">
                     <NavLink to={ROUTES.empReport} activeClassName="selected" className="link">Report</NavLink>
-                    <NavLink exact={true} to={ROUTES.dashboard} activeClassName="selected" className="link">Dashboard</NavLink>
+                    {/* <NavLink exact={true} to={ROUTES.dashboard} activeClassName="selected" className="link">Dashboard</NavLink> */}
                     {/* <NavLink to={ROUTES.landing} activeClassName="selected" className="link">About</NavLink> */}
                     <NavLink to={ROUTES.profile} activeClassName="selected" className="link">Profile</NavLink>
                 </div>
