@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './HRPage.css';
-import Header from '../Header/header.js'
+import Header from '../Header/header.js';
 import Report from '../Report/report.js';
 import {ROUTES} from '../../constants';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -74,7 +74,7 @@ class ReportTable extends Component {
 
     render() {
         if (this.state.shouldRedirect) {
-            return <Redirect push to={'../Report/report.js'} />
+            return <Redirect push to={"../Report/report.js"} />
         }
         return (
             <div id="table1">
@@ -127,7 +127,7 @@ class ResolvedTable extends Component {
                         </button>
                     )
                     if (this.state.shouldRedirect) {
-                        return <Redirect push to={'../Report/report.js'} />
+                        return <Redirect push to={"../Report/report.js"} />
                     }
                 }
                 this.handleData(currentRows);
