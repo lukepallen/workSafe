@@ -7,11 +7,17 @@
     justify-content: center;
     align-items: center;
 
-    .btn {
-        background-color: $primary;
+    .btn, .btn1 {
         color: white;
         padding: 6px 24px;
         margin: 0 25px;
+    }
+
+    .btn1 {
+        background-color: #EEB868;
+        color: white;
+        border-radius: 10px;
+        border: none;
     }
 
     .btn:hover {
@@ -50,6 +56,7 @@
 
 .label {
     font-weight: bold;
+    color: black;
 }
 
 .formSection {
@@ -66,7 +73,7 @@
     justify-content: space-between;
 }
 
-.btn {
+.btn, .btn1 {
   height: 100%;
 }
 

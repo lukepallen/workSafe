@@ -1,6 +1,5 @@
-#table1, #table2 {
-    display: none;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#table2 {
+    display: block;
     margin-left: 2rem; 
     margin-right:2rem;
     align-self: center;
@@ -10,7 +9,7 @@
 .content {
     margin: .4rem;
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
 }
@@ -55,8 +54,8 @@
 }
 
 .rows {
-    background-image: url("../images/bluepat2.jpg");
-    height: 8rem;
+    background-color: #456990;
+    height: 10rem;
     width: 20rem;
     margin: 2rem;
     padding: 0px;
@@ -66,7 +65,7 @@
     
 }
 
-#table1 button, #table2 button {
+#table2 button{
     border: none;
     margin: 0px;
     padding: 0px;

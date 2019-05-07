@@ -1,34 +1,51 @@
-
-
 .header {
     font-size: 1.25rem;
-    height: 15vh;
+    font-family: 'Courier New', Courier, monospace;
 }
 
-.header-title {
+.yellow {
+    width: 5%;
+    background-color: #EEB868;
+}
+
+.title{
     display: flex;
     justify-content: center;
+    background-color: #456990;
+    color: #EEB868;
+    width: 100%;
+    
 }
 
-.navbar {
+h1 {
+    width: 90%;
+    text-align: center;
+}
+
+.tabs {
     display: flex;
-    justify-content: space-around;
+    width: 100%;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-evenly;
 }
 
 .link {
     color: black;
     text-decoration: none;
-    padding: 0 2px 2px 2px;
+    padding-top: 1rem;
+    
 }
 
 .link:hover {
-    color: blue;
+    color: #EEB868;
+    font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid;
 }
 
 
 .selected {
-    color: primary;
+    color: #EEB868;
     border-bottom: 1px solid;
 }

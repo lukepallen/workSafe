@@ -9,8 +9,8 @@ export default class Header extends Component {
     render() {
         return (
             <div className="header">
-                <div className="header-title">
-                    <h1>workSafe</h1>
+                <div className="title">
+                    <h1>WORKSAFE</h1>
                 </div>
                 <div className="tabs">
                     <NavLink to={ROUTES.hrPage} activeClassName="selected" className="link">Pending Reports</NavLink>

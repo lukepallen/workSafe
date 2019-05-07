@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './hrpageresolved.css';
-import Header from '../Header/header.js';
 import Report from '../Report/report.js';
 import {ROUTES} from '../../constants';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -12,6 +11,7 @@ export default class HRPage extends Component {
             <div>
                 <Switch>
                     <Route path={ROUTES.hrReport} component={Report}></Route>
+                    {/* <Route path={ROUTES.hrReport} component={Report}></Route> */}
                 </Switch>
                 <ResolvedTable></ResolvedTable>
             </div>

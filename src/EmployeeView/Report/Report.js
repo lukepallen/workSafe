@@ -44,8 +44,8 @@ class Report extends React.Component {
                 {!this.state.userType ? 
                 <div className="select">
                     <div className="select-btns">
-                        <button className="btn" onClick={() => this.setState({"userType": "bystander"})}>Bystander</button>
-                        <button className="btn" onClick={() => this.setState({"userType": "firstHand"})}>First Hand</button>
+                        <button className="btn1" onClick={() => this.setState({"userType": "bystander"})}>Bystander</button>
+                        <button className="btn1" onClick={() => this.setState({"userType": "firstHand"})}>First Hand</button>
                     </div>
                 </div> 
                 : 

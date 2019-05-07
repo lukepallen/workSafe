@@ -56,8 +56,8 @@ class ReportTable extends Component {
                                             <h2> {snap[i].name} </h2>
                                             <p className={snap[i].status.replace(/\s+/g, '')}> {snap[i].status} </p>
                                         </div>
-                                            <p className="date"> {snap[i].datetime} </p>
-                                            <p className="type"> {snap[i].type} </p>
+                                        <p className="date"> {snap[i].datetime} </p>
+                                        <p className="type"> {snap[i].type} </p>
                                     </div>
                                 </div>
                             </button>

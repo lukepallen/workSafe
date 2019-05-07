@@ -6,6 +6,7 @@ import {ROUTES} from '../constants';
 import { Route, Redirect } from 'react-router-dom';
 import HRPage from './HRPage/HRPage.js';
 import Dashboard from './Dashboard/Dashboard.js';
+import Report from "./Report/report.js"
 
 class HRApp extends Component {
   render() {
@@ -18,6 +19,7 @@ class HRApp extends Component {
               <Route path={ROUTES.hrPage} component={HRPage}/>
               <Route path={ROUTES.dashboard} component={Dashboard}/>
               <Route path={ROUTES.hrResolved} component={HRPageResolved}/>
+              <Route path={ROUTES.hrReport} component={Report}/>
               <Redirect to={ROUTES.hrPage}></Redirect>
             </div>
           </div>
