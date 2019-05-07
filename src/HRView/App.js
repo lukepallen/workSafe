@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Header/header.js';
-import Report from './Report/report.js';
 import HRPageResolved from './HRPageResolved/hrpageresolved.js';
 import {ROUTES} from '../constants';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import HRPage from './HRPage/HRPage.js';
 import Dashboard from './Dashboard/Dashboard.js';
 

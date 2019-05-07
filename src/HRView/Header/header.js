@@ -15,34 +15,9 @@ export default class Header extends Component {
                 <div className="tabs">
                     <NavLink to={ROUTES.hrPage} activeClassName="selected" className="link">Pending Reports</NavLink>
                     <NavLink exact={true} to={ROUTES.dashboard} activeClassName="selected" className="link">Dashboard</NavLink>
-                    {/* <NavLink to={ROUTES.landing} activeClassName="selected" className="link">About</NavLink> */}
                     <NavLink to={ROUTES.hrResolved} activeClassName="selected" className="link">Resolved Reports</NavLink>
                 </div>
             </div>
-            // <div>
-            //     <h1> WorkSafe </h1>
-            //         <div className="tabs">
-            //             <button onClick={this.showTable} className="tab">
-            //                 <img src={reports} alt="reports" />
-            //             </button>
-            //             <button className="tab" onClick={this.hideTable}>
-            //                 <img src={validated} alt="validated" />
-            //             </button>
-            //             <button className="tab" onClick={this.hideTable}>
-            //                 <img src={validated} alt="validated" />
-            //             </button>
-            //         </div>
-            // </div>
         );
-    }
-
-    showTable() {
-        document.getElementById("table1").style.display="block";
-        document.getElementById("table2").style.display="none";
-    }
-
-    hideTable() {
-        document.getElementById("table1").style.display="none";
-        document.getElementById("table2").style.display="block";
     }
 }
