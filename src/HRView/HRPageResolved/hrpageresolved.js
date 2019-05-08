@@ -62,9 +62,6 @@ class ResolvedTable extends Component {
                             </div>
                         </button>
                     )
-                    if (this.state.shouldRedirect) {
-                        return <Redirect push to={ROUTES.hrReport} />
-                    }
                 }
                 this.handleData(currentRows);
             }
@@ -72,6 +69,9 @@ class ResolvedTable extends Component {
     }
 
     render() {
+        if (this.state.shouldRedirect) {
+            return <Redirect push to={ROUTES.hrReport} />
+        }
         return (
             <div id="table2">
                 {this.state.rows}
