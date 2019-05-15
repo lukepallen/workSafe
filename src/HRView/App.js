@@ -10,6 +10,13 @@ import Report from "./Report/report.js"
 
 class HRApp extends Component {
   render() {
+    if (!this.props.auth.getIsHr()) {
+      return (
+          <div>
+              <p>You are not authorized to use this application</p>
+          </div>
+      )
+    }
     return (
       <div className="body">
             <div>

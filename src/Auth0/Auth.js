@@ -10,16 +10,22 @@ export default class Auth {
   userId;
   user = new BehaviorSubject();
   empType;
+  auth0Manage;
+  isHr;
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientId,
     redirectUri: AUTH_CONFIG.callbackUrl,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'openid openid profile read:current_user update:current_user update:users ' +
+        'create:current_user_metadata update:current_user_metadata create:users_app_metadata ' +
+        'update:users_app_metadata'
   });
 
   constructor() {
+    let localHr = localStorage.getItem('isHr');
+    this.isHr = localHr && localHr === 'true' ? true : false; 
     this.login = this.login.bind(this);
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
@@ -27,6 +33,8 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.updateMetadata = this.updateMetadata.bind(this);
+    this.getIsHr = this.getIsHr.bind(this);
     this.empType = localStorage.getItem("empType");
   }
 
@@ -36,15 +44,15 @@ export default class Auth {
   }
 
   login() {
-    this.auth0.authorize();
+    this.auth0.authorize({audience: "https://koolkids.auth0.com/api/v2/"});
   }
 
   handleAuthentication() {
     this.auth0.parseHash({hash: window.location.hash.split("callback")[1]}, (err, authResult) => {
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
-      } else if (err) {
-        window.location.href = ROUTES.url + '#/' + this.empType;
+      } else if (err) {      
+        window.location.href = ROUTES.url + '#/';
         console.log(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
@@ -59,7 +67,15 @@ export default class Auth {
     return this.idToken;
   }
 
+  getIsHr() {
+    if (localStorage.getItem('isHr') === 'true') {
+      return true;
+    }
+    return this.isHr;
+  }
+
   setSession(authResult) {
+    console.log(authResult);
     // Set isLoggedIn flag in localStorage
     localStorage.setItem('isLoggedIn', 'true');
 
@@ -70,22 +86,24 @@ export default class Auth {
     this.expiresAt = expiresAt;
 
     if (this.accessToken) {
+      this.getManagement();
       this.auth0.client.userInfo(this.accessToken, (err, user) => {
         if (err) {
           console.log(err)
         } else {
           this.userId = user.sub;
-          // this.auth0Manage.getUser(this.userId, (err, fullUser) => {
-          //   if (err) {
-          //     console.log(err);
-          //   } else {
-          //     this.user.next(fullUser);
-          //   }
-          // });
+          this.auth0Manage.getUser(this.userId, (err, fullUser) => {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(fullUser);
+              this.user.next(fullUser);
+              this.checkFirstLogin(fullUser);
+            }
+          });
         }
       })
     }
-    window.location.href = ROUTES.url + '#/' + this.empType;
   }
 
   renewSession() {
@@ -124,26 +142,41 @@ export default class Auth {
     return new Date().getTime() < expiresAt;
   }
 
-  // updateMetadata() {
-  //   let metadata = {
-  //     "enrolled": true
-  //   }
-  //   return new Promise(resolve => {
-  //     this.auth0Manage.patchUserMetadata(this.userId, metadata, (err, res) => {
-  //       if (err) {
-  //         resolve({error: err});
-  //       } else {
-  //         resolve({results: res});
-  //       }
-  //     });
-  //   });
-    
-  // }
+  checkFirstLogin(user) {
+    console.log(user);
+    if (user.user_metadata) {
+      if (user.user_metadata.isHr) {
+        localStorage.setItem('isHr', 'true')
+        this.isHr = user.user_metadata.isHr;
+      }
+      window.location.href = ROUTES.url + '#/' + this.empType;
+    } else {
+      window.location.href = ROUTES.url + '#' + ROUTES.register;
+    }
+  }
 
-  // getManagement() {
-  //   this.auth0Manage = new auth0.Management({
-  //     domain: AUTH_CONFIG.domain,
-  //     token: AUTH_CONFIG.managementToken
-  //   });
-  // }
+  updateMetadata(metadata) {
+    this.auth0Manage.patchUserMetadata(this.userId, metadata, (err, res) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log(res);
+        this.user.next(res);
+        this.isHr = metadata.isHr;
+        if (this.isHr) {
+          localStorage.setItem('isHr', 'true')
+        } else {
+          localStorage.setItem('isHr', 'false')
+        }
+        window.location.href = ROUTES.url + '#/' + this.empType;
+      }
+    });
+  }
+
+  getManagement() {
+    this.auth0Manage = new auth0.Management({
+      domain: AUTH_CONFIG.domain,
+      token: this.accessToken
+    });
+  }
 }

@@ -1,0 +1,21 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// .register {
+//     width: 30vw;
+// }
+
+.register-info {
+    color: #6C757D;
+}
+
+.btn-div {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0;
+}

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route} from 'react-router-dom';
+import Register from './Register/Register';
 import EmpApp from './EmployeeView/App';
 import HRApp from './HRView/App';
 import {ROUTES} from './constants';
@@ -29,8 +30,9 @@ export default class App extends Component {
         return (
             <Router>
                 <div>
-                    <Route path={ROUTES.employee} component={EmpApp}/>
-                    <Route path={ROUTES.hr} component={HRApp}/>
+                    <Route path={ROUTES.register} render={(props) => <Register auth={this.auth} {...props} />}/>
+                    <Route path={ROUTES.employee} render={(props) => <EmpApp auth={this.auth} {...props} />}/>
+                    <Route path={ROUTES.hr} render={(props) => <HRApp auth={this.auth} {...props} />}/>
                     <Route path={ROUTES.callback} render={(props) => {
                         handleAuthentication(props, this.auth);
                         return <Callback {...props} />

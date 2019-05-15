@@ -1,6 +1,7 @@
 export const ROUTES = {
     login: "/",
     callback: "/callback",
+    register: "/register",
     employee: "/employee",
     landing: "/employee/about",
     profile: "/employee/profile",
