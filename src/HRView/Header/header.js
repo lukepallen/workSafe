@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import './header.scss'
 import {NavLink} from 'react-router-dom';
 import {ROUTES} from "../../constants";
+import logo from './logo_transparent.png'
 
 export default class Header extends Component {
     render() {
         return (
             <div className="header">
                 <div className="title">
-                    <h1>WORKSAFE</h1>
+                    <img src={logo} alt="Logo" />;
                 </div>
                 <div className="tabs">
                     <NavLink to={ROUTES.hrPage} activeClassName="selected" className="link">Pending Reports</NavLink>

@@ -2,7 +2,7 @@
 
 .header {
     font-size: 1.25rem;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Noto Serif KR', serif;
     height: 20vh;
 }
 
@@ -12,11 +12,6 @@
     background-color: $secondary;
     color: $primary;
     width: 100%;
-}
-
-h1 {
-    width: 90%;
-    text-align: center;
 }
 
 .navbar {
