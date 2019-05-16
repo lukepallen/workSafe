@@ -10,6 +10,10 @@ import Report from "./Report/report.js"
 
 class HRApp extends Component {
   render() {
+    if (!this.props.auth.isAuthenticated()) {
+      this.props.auth.setEmployeeType('employee');
+      this.props.auth.login();
+    }
     if (!this.props.auth.getIsHr()) {
       return (
           <div>

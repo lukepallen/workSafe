@@ -53,7 +53,7 @@ export default class Auth {
         this.setSession(authResult);
       } else if (err) {      
         window.location.href = ROUTES.url + '#/';
-        console.log(err);
+        console.error(err);
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
@@ -75,7 +75,6 @@ export default class Auth {
   }
 
   setSession(authResult) {
-    console.log(authResult);
     // Set isLoggedIn flag in localStorage
     localStorage.setItem('isLoggedIn', 'true');
 
@@ -89,14 +88,13 @@ export default class Auth {
       this.getManagement();
       this.auth0.client.userInfo(this.accessToken, (err, user) => {
         if (err) {
-          console.log(err)
+          console.error(err)
         } else {
           this.userId = user.sub;
           this.auth0Manage.getUser(this.userId, (err, fullUser) => {
             if (err) {
-              console.log(err);
+              console.error(err);
             } else {
-              console.log(fullUser);
               this.user.next(fullUser);
               this.checkFirstLogin(fullUser);
             }
@@ -112,7 +110,7 @@ export default class Auth {
          this.setSession(authResult);
        } else if (err) {
          this.logout();
-         console.log(err);
+         console.error(err);
          alert(`Could not get a new token (${err.error}: ${err.error_description}).`);
        }
     });
@@ -143,7 +141,6 @@ export default class Auth {
   }
 
   checkFirstLogin(user) {
-    console.log(user);
     if (user.user_metadata) {
       if (user.user_metadata.isHr) {
         localStorage.setItem('isHr', 'true')
@@ -160,7 +157,6 @@ export default class Auth {
       if (err) {
         console.error(err);
       } else {
-        console.log(res);
         this.user.next(res);
         this.isHr = metadata.isHr;
         if (this.isHr) {

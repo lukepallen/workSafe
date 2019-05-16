@@ -11,7 +11,7 @@ class Card extends React.Component {
                 <p className="label">Description:</p>
                 <p className="content">{this.props.desc}</p>
                 <p className="label">Date and Time of Occurence:</p>
-                <p className="content">{moment(this.props.datetime).format("LLLL")}</p>
+                <p className="content">{moment(this.props.time).format("LLLL")}</p>
             </div>
         )
     }

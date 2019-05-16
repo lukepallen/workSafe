@@ -1,17 +1,17 @@
-@import 'src/EmployeeView/App';
+@import 'src/App';
 
 .header {
     font-size: 1.25rem;
     font-family: 'Courier New', Courier, monospace;
+    height: 20vh;
 }
 
 .header-title{
     display: flex;
     justify-content: center;
-    background-color: #456990;
-    color: #EEB868;
+    background-color: $secondary;
+    color: $primary;
     width: 100%;
-    
 }
 
 h1 {

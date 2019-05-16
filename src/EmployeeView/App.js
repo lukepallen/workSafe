@@ -7,18 +7,22 @@ import Profile from './Profile/Profile';
 
 class EmpApp extends Component {
     render() {
-        return (
-          <div className="body">
-            <div>
-              <Header></Header>
-            </div>
-            <div className="main">
-              <Route path={ROUTES.empReport} component={Report}/>
-              <Route path={ROUTES.profile} component={Profile}/>
-              <Redirect to={ROUTES.empReport}></Redirect>
-            </div>
+      if (!this.props.auth.isAuthenticated()) {
+        this.props.auth.setEmployeeType('employee');
+        this.props.auth.login();
+      }
+      return (
+        <div className="body">
+          <div>
+            <Header></Header>
           </div>
-        );
+          <div className="main">
+            <Route path={ROUTES.empReport} render={(props) => <Report auth={this.props.auth} {...props}/>}/>
+            <Route path={ROUTES.profile} render={(props) => <Profile auth={this.props.auth} {...props}/>}/>
+            <Redirect to={ROUTES.empReport}></Redirect>
+          </div>
+        </div>
+      );
     }
 }
 

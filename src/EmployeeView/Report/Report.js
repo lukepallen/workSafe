@@ -16,14 +16,22 @@ class Report extends React.Component {
             toDashboard: false
         }
         this.reportInfo = {
-            name: 'Jane Doe',
+            name: '',
             datetime: '',
             location: '',
             type: '',
+            harasser: '',
             description: '',
             status: "Awaiting Review",
         }
         this.firebase = new FirebaseService();
+        this.user = undefined;
+    }
+    componentDidMount() {
+        this.props.auth.user.subscribe(user => {
+            this.user = user;
+            this.reportInfo.name = this.user.user_metadata.name;
+        })
     }
     handleChange(key, value) {
         this.reportInfo[key] =  value;
@@ -44,8 +52,8 @@ class Report extends React.Component {
                 {!this.state.userType ? 
                 <div className="select">
                     <div className="select-btns">
-                        <button className="btn1" onClick={() => this.setState({"userType": "bystander"})}>Bystander</button>
-                        <button className="btn1" onClick={() => this.setState({"userType": "firstHand"})}>First Hand</button>
+                        <button className="btn btn1" onClick={() => this.setState({"userType": "bystander"})}>Bystander</button>
+                        <button className="btn btn1" onClick={() => this.setState({"userType": "firstHand"})}>First Hand</button>
                     </div>
                 </div> 
                 : 
@@ -79,6 +87,11 @@ class Report extends React.Component {
                                 <option>Disability-Based Harassment</option>
                             </select>
                         </div>
+                        <div className="harasser formSection short">
+                            <p className="label">Harasser</p>
+                            <input type="text" className="form-control form-control-sm" aria-describedby="harasserInput"
+                                    onChange={evt => this.handleChange("harasser", evt.currentTarget.value)}></input>
+                        </div>
                         <div className="bystander formSection short">
                             <p className="label">{this.state.userType === 'bystander' ? "Parties ": "Bystanders"} Present </p>
                             <input type="text" className="form-control form-control-sm" aria-describedby="bystanderInput"
@@ -88,7 +101,7 @@ class Report extends React.Component {
                                     }}></input>
                         </div>
                         <div className="description formSection">
-                            <p className="label">Description *</p>
+                            <p className="label">Description</p>
                             <textarea type="text" className="form-control form-control-sm" rows="2"
                                     onChange={evt => this.handleChange("description", evt.currentTarget.value)}></textarea>
                         </div>

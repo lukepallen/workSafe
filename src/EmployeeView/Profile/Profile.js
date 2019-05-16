@@ -10,11 +10,16 @@ class Profile extends React.Component {
             rows: [],
         };
         this.firebase = new FirebaseService();
-        this.fetchData();
+        this.user = undefined;
+    }
+    componentDidMount() {
+        this.props.auth.user.subscribe(user => {
+            this.user = user;
+            this.fetchData();
+        })
     }
     fetchData() {
-        this.firebase.get("Jane Doe").then(data => {
-            console.log(data);
+        this.firebase.get(this.user.user_metadata.name).then(data => {
             let rows = data.map(row => {
                 let content
                 Object.keys(row).forEach(key => content = row[key])
@@ -29,9 +34,13 @@ class Profile extends React.Component {
                 <div className="reports">
                     <p className="label">Reports Filed</p>
                     <div>
-                        {this.state.rows.map(row => 
-                            <Card desc={row.description} time={row.datetime} status={row.status}></Card>
-                        )}
+                        {
+                            this.state.rows.length !== 0 ? 
+                            this.state.rows.map(row => 
+                                <Card desc={row.description} time={row.datetime} status={row.status}></Card>
+                            ) :
+                            <p>Go to the report tab to file a report</p>
+                        }
                     </div>
                 </div>
             </div>
