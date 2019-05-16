@@ -1,14 +1,15 @@
 {
-  "main.css": "/workSafe/static/css/main.6a7eef23.chunk.css",
-  "main.js": "/workSafe/static/js/main.f5590c37.chunk.js",
-  "main.js.map": "/workSafe/static/js/main.f5590c37.chunk.js.map",
-  "static/js/1.85cd2ae0.chunk.js": "/workSafe/static/js/1.85cd2ae0.chunk.js",
-  "static/js/1.85cd2ae0.chunk.js.map": "/workSafe/static/js/1.85cd2ae0.chunk.js.map",
+  "main.css": "/workSafe/static/css/main.ff9da193.chunk.css",
+  "main.js": "/workSafe/static/js/main.a437dc3d.chunk.js",
+  "main.js.map": "/workSafe/static/js/main.a437dc3d.chunk.js.map",
+  "static/js/1.593b2dfa.chunk.js": "/workSafe/static/js/1.593b2dfa.chunk.js",
+  "static/js/1.593b2dfa.chunk.js.map": "/workSafe/static/js/1.593b2dfa.chunk.js.map",
   "runtime~main.js": "/workSafe/static/js/runtime~main.2eedd4da.js",
   "runtime~main.js.map": "/workSafe/static/js/runtime~main.2eedd4da.js.map",
+  "static/media/anothaone.png": "/workSafe/static/media/anothaone.4861f4d3.png",
   "static/media/loading.svg": "/workSafe/static/media/loading.c5590569.svg",
-  "static/css/main.6a7eef23.chunk.css.map": "/workSafe/static/css/main.6a7eef23.chunk.css.map",
+  "static/css/main.ff9da193.chunk.css.map": "/workSafe/static/css/main.ff9da193.chunk.css.map",
   "index.html": "/workSafe/index.html",
-  "precache-manifest.874caee43dcebbbcbc24f57455d622d2.js": "/workSafe/precache-manifest.874caee43dcebbbcbc24f57455d622d2.js",
+  "precache-manifest.6f989532cfe4736c8bbec27df2541198.js": "/workSafe/precache-manifest.6f989532cfe4736c8bbec27df2541198.js",
   "service-worker.js": "/workSafe/service-worker.js"
 }
