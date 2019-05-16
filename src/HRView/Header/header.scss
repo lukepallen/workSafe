@@ -1,3 +1,5 @@
+@import 'src/app';
+
 .header {
     font-size: 1.25rem;
     font-family: 'Courier New', Courier, monospace;
@@ -5,14 +7,14 @@
 
 .yellow {
     width: 5%;
-    background-color: #EEB868;
+    background-color: $primary;
 }
 
 .title{
     display: flex;
     justify-content: center;
-    background-color: #456990;
-    color: #EEB868;
+    background-color: $secondary;
+    color: $primary;
     width: 100%;
     
 }
@@ -38,7 +40,7 @@ h1 {
 }
 
 .link:hover {
-    color: #EEB868;
+    color: $primary;
     font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid;
@@ -46,7 +48,7 @@ h1 {
 
 
 .selected {
-    color: #EEB868;
+    color: $primary;
     font-weight: bold;
     border-bottom: 1px solid;
 }

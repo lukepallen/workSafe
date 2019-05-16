@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './header.css'
+import './header.scss'
 import {NavLink} from 'react-router-dom';
 import {ROUTES} from "../../constants";
 

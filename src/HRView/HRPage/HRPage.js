@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HRPage.css';
+import './HRPage.scss';
 import Report from '../Report/report.js';
 import {ROUTES} from '../../constants';
 import { Route, Switch, Redirect } from 'react-router-dom';

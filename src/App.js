@@ -6,6 +6,7 @@ import HRApp from './HRView/App';
 import {ROUTES} from './constants';
 import Callback from './Callback/Callback';
 import Auth from './Auth0/Auth';
+import './App.scss';
 
 const handleAuthentication = ({location}, auth) => {
     if (/access_token|id_token|error/.test(location.hash)) {
@@ -42,11 +43,11 @@ export default class App extends Component {
                             <div style={loginStyle}>
                                 <div>
                                     <h4>Login as:</h4>
-                                    <button className="btn btn-outline-primary mr-2" onClick={() => {
+                                    <button className="btn btn-outline-primary empSelect mr-2" onClick={() => {
                                         this.auth.setEmployeeType("employee");
                                         this.auth.login();
                                     }}>Employee</button>
-                                    <button className="btn btn-outline-primary" onClick={() => {
+                                    <button className="btn btn-outline-primary empSelect" onClick={() => {
                                         this.auth.setEmployeeType("hr");
                                         this.auth.login();
                                     }}>HR</button>

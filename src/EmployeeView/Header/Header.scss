@@ -35,7 +35,7 @@ h1 {
 }
 
 .link:hover {
-    color: #EEB868;
+    color: $primary;
     font-weight: bold;
     text-decoration: none;
     border-bottom: 1px solid;
@@ -43,7 +43,7 @@ h1 {
 
 
 .selected {
-    color: #EEB868;
+    color: $primary;
     border-bottom: 1px solid;
     font-weight: bold;
 }

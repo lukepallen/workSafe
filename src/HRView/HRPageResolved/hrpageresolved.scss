@@ -1,6 +1,7 @@
-#table1 {
+@import 'src/app';
+
+#table2 {
     display: block;
-    
     margin-left: 2rem; 
     margin-right:2rem;
     align-self: center;
@@ -13,75 +14,60 @@
     font-family: 'Courier New', Courier, monospace;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
 }
 
 .content p {
-    font-size: .9rem;
+    font-size: .8rem;
 }
 
 .head {
     display: flex;
     flex-direction: row;
     vertical-align: baseline;
-    color: white;
 }
 
-.head h2 {
-    font-size: 1.4rem;
-    display: inline;
-}
-
-.head > p {
-    color: white;
-    border-radius: 8px;
-    padding: 2px;
-}
-
-.head h2, .head > p {
+.head h2, .head p {
     margin-left: 1rem;
     margin-right: 1rem;
-    align-self: baseline;
-}
-
-.date, .type {
-    color: #EEB868;
 }
 
 .AwaitingReview {
-    background-color: hsla(0, 100%, 50%, 0.65);
+    color: red;
 }
 
 .Validated {
-    background-color: lightgreen;
+    color: lightgreen;
 }
 
 .Mediation {
-    background-color: rgba(165, 42, 42, 0.81);
+    color: brown;
 } 
 
 .FormalConsequences {
-    background-color: blueviolet;
+    color: blueviolet;
 }
 
 .FinalInvestigativeReportSubmitted {
-    background-color: yellow;
+    color: yellow;
 }
 
 .Resolved {
-    background-color: green;
+    color: green;
 }
 
 .rows {
-    background-color: rgba(69,105,144, 0.8);
+    background-color: $secondary;
+    height: 10rem;
+    width: 20rem;
     margin: 2rem;
     padding: 0px;
     border-radius: 25px;
+    border: none;
     box-shadow: 0px 1px 1px 1px #00000062;
     
 }
 
-#table1 button{
+#table2 button{
     border: none;
     margin: 0px;
     padding: 0px;

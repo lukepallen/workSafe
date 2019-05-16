@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './report.css';
+import './report.scss';
 
 export default class Report extends Component {
 
