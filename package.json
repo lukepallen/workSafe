@@ -55,6 +55,7 @@
     "rxjs": "^6.5.1",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
+    "tableau-api": "^2.2.2",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
     "webpack": "4.19.1",
