@@ -34,9 +34,17 @@ export default class FirebaseService {
         let data = []
         return this.db.where("status", "==", status).get().then(
             snapshot => {
-                snapshot.forEach(snap => data.push(snap.data()));
+                snapshot.forEach(snap => data.push({[snap.id]: snap.data()}));
                 return data;
             }
         );
+    }
+
+    updateStatus(key, newstatus) {
+        return this.db.doc(key).update({
+            status : newstatus
+        }).then(function(){
+            console.log("Updated to" + newstatus)
+        })
     }
 }

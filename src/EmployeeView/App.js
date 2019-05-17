@@ -20,6 +20,7 @@ class EmpApp extends Component {
             <Route path={ROUTES.empReport} render={(props) => <Report auth={this.props.auth} {...props}/>}/>
             <Route path={ROUTES.profile} render={(props) => <Profile auth={this.props.auth} {...props}/>}/>
             <Redirect to={ROUTES.empReport}></Redirect>
+            
           </div>
         </div>
       );

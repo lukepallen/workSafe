@@ -23,13 +23,26 @@ class ReportTable extends Component {
         super(props);
         this.state = {
             shouldRedirect: false,
-            rows: []
+            rows: [],
+            selectedName: "",
+            selectedDate: null,
+            selectedStatus: "",
+            selectedType: ""
         };
         this.firebase = new FirebaseService();
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick() {
-        this.setState({shouldRedirect: true});
+    handleClick(status, name, datetime, type, description, key) {
+        this.setState({
+            shouldRedirect: true,
+            selectedStatus: status,
+            selectedDate: datetime,
+            selectedName: name,
+            selectedType: type,
+            selectedDesc: description,
+            selectedKey: key
+        });
     };
 
     componentDidMount() {
@@ -42,22 +55,31 @@ class ReportTable extends Component {
 
     createRows() {
         let currentRows = []
-        let statuses = ["Awaiting Review", "Validated", "Mediation", "Formal Consequences", "Final Investigative Report Submitted"];
+        let statuses = ["Awaiting Review", "Validated", "Mediation", "Corrective Action", "Final Investigative Report Submitted"];
         for (var j = 0; j < statuses.length; j++) {
             this.firebase.getByStatus(statuses[j]).then(
                 snap => {
-                    for (var i = 0; i < snap.length; i++) {
-                        var rowid = "t1row" + snap[i].datetime + i;
+
+                    for (var i in snap) {
+                        let currKey = "";
+                        currKey = (Object.keys(snap[i]))[0];
+                        let document = snap[i][currKey]
+                        var rowid = "t1row" + document.datetime + i;
+                        let currStatus = document.status;
+                        let currName = document.name;
+                        let currDate = document.datetime;
+                        let currType = document.type;
+                        let currDescription = document.description;
                         currentRows.push(
-                            <button key={rowid} onClick={() => this.handleClick()}>
+                            <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey)}>
                                 <div className="rows">
                                     <div className="content">
                                         <div className="head">
-                                            <h2> {snap[i].name} </h2>
-                                            <p className={snap[i].status.replace(/\s+/g, '')}> {snap[i].status} </p>
+                                            <h2> {currName} </h2>
+                                            <p className={currStatus.replace(/\s+/g, '')}> {currStatus} </p>
                                         </div>
-                                        <p className="date"> {snap[i].datetime} </p>
-                                        <p className="type"> {snap[i].type} </p>
+                                        <p className="date"> {currDate} </p>
+                                        <p className="type"> {currType} </p>
                                     </div>
                                 </div>
                             </button>
@@ -71,7 +93,17 @@ class ReportTable extends Component {
 
     render() {
         if (this.state.shouldRedirect) {
-            return <Redirect push to={ROUTES.hrReport} />
+            return <Redirect push to={{
+                pathname: ROUTES.hrReport,
+                state: { 
+                    name: this.state.selectedName,
+                    status: this.state.selectedStatus,
+                    date: this.state.selectedDate,
+                    type: this.state.selectedType,
+                    description: this.state.selectedDesc,
+                    key: this.state.selectedKey
+                }
+            }} />
         }
         return (
             <div id="table1">
