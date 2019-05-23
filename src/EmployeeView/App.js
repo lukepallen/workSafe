@@ -14,7 +14,7 @@ class EmpApp extends Component {
       return (
         <div className="body">
           <div>
-            <Header></Header>
+            <Header auth={this.props.auth}></Header>
           </div>
           <div className="main">
             <Route path={ROUTES.empReport} render={(props) => <Report auth={this.props.auth} {...props}/>}/>

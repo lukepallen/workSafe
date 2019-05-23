@@ -24,7 +24,7 @@ class HRApp extends Component {
     return (
       <div className="body">
             <div>
-              <Header></Header>
+              <Header auth={this.props.auth}></Header>
             </div>
             <div className="main">
               <Route path={ROUTES.hrPage} component={HRPage}/>

@@ -1,6 +1,6 @@
 @import 'src/app';
 
-.header {
+.empHeader {
     font-size: 1.25rem;
     font-family: 'Lato';
     background-color: white;
@@ -30,7 +30,7 @@ img {
     background-color: $primary;
 }
 
-.title{
+.title {
     display: flex;
     justify-content: center;
     width: 30%;
@@ -66,9 +66,20 @@ img {
     border-bottom: 1px solid;
 }
 
-
 .selected {
     color: $primary;
     font-weight: bold;
     border-bottom: 1px solid;
+}
+
+.logoutBtn {
+    height: 35px;
+    border-color: $secondary;
+    color: $secondary;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: $secondary;
+        border-color: $secondary;
+    }
 }
