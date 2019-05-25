@@ -9,7 +9,7 @@ class Dashboard extends React.Component {
     }
 
     initViz() {
-        const vizUrl = "https://public.tableau.com/views/workSafe/workSafeDashboard?:embed=y&:display_count=yes&:origin=viz_share_link"
+        const vizUrl = "https://public.tableau.com/views/capstone_15588227393440/workSafeDashboard?:embed=y&:display_count=yes&:origin=viz_share_link"
         const vizContainer = this.vizContainer;  
         let viz = new window.tableau.Viz(vizContainer, vizUrl)
 
@@ -17,7 +17,7 @@ class Dashboard extends React.Component {
 
     render() {
         return (
-            <div ref={(div) => { this.vizContainer = div }}>  
+            <div className="mainDashboard" ref={(div) => { this.vizContainer = div }}>  
             </div> 
         )
     }
