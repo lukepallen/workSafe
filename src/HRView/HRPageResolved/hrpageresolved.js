@@ -65,7 +65,7 @@ class ResolvedTable extends Component {
                     let currDescription = document.description;
                     currentRows.push(
                         <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey)}>
-                            <div className="rows">
+                            <div className={"rows " + (document.reportType === "bystander" ? "bystander" : "firstHand")}>
                                 <div className="content">
                                     <div className="head">
                                         <h2> {currName} </h2>

@@ -37,7 +37,6 @@
 }
 
 .rows {
-    background-color: $secondary;
     height: 10rem;
     width: 20rem;
     margin: 2rem;
@@ -45,7 +44,14 @@
     border-radius: 25px;
     border: none;
     box-shadow: 0px 1px 1px 1px #00000062;
-    
+}
+
+.bystander {
+    background-color: $primary;
+}
+
+.firstHand {
+    background-color: $secondary;
 }
 
 #table2 button{
