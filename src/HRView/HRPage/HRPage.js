@@ -70,9 +70,10 @@ class ReportTable extends Component {
                         let currDate = document.datetime;
                         let currType = document.type;
                         let currDescription = document.description;
+                        console.log(document);
                         currentRows.push(
                             <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey)}>
-                                <div className="rows">
+                                <div className={"rows " + (document.reportType === "bystander" ? "bystander" : "firstHand")}>
                                     <div className="content">
                                         <div className="head">
                                             <h2> {currName} </h2>

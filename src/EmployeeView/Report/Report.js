@@ -23,6 +23,7 @@ class Report extends React.Component {
             harasser: '',
             description: '',
             status: "Awaiting Review",
+            reportType: ''
         }
         this.firebase = new FirebaseService();
         this.user = undefined;
@@ -52,8 +53,8 @@ class Report extends React.Component {
                 {!this.state.userType ? 
                 <div className="select">
                     <div className="select-btns">
-                        <button className="btn btn1" onClick={() => this.setState({"userType": "bystander"})}>Bystander</button>
-                        <button className="btn btn1" onClick={() => this.setState({"userType": "firstHand"})}>First Hand</button>
+                        <button className="btn btn1" onClick={() => {this.setState({"userType": "bystander"}); this.reportInfo.reportType = "bystander";}}>Bystander</button>
+                        <button className="btn btn1" onClick={() => {this.setState({"userType": "firstHand"}); this.reportInfo.reportType = "first hand";}}>First Hand</button>
                     </div>
                 </div> 
                 : 
