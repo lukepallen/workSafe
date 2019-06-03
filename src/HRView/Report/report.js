@@ -95,6 +95,9 @@ class Form extends Component {
                         <div className="reponse"> Your Response:
                             <p className="replies"> {this.state.firstval} </p>
                         </div>
+                        <div className="response"> Accused Harasser:
+                            <p className="replies"> {this.props.data.harasser} </p>
+                        </div>
                     </div>
                 </div>
             </div>

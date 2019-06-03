@@ -27,13 +27,14 @@ class ReportTable extends Component {
             selectedName: "",
             selectedDate: null,
             selectedStatus: "",
-            selectedType: ""
+            selectedType: "",
+            selectedHarasser: ""
         };
         this.firebase = new FirebaseService();
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick(status, name, datetime, type, description, key) {
+    handleClick(status, name, datetime, type, description, key, harasser) {
         this.setState({
             shouldRedirect: true,
             selectedStatus: status,
@@ -41,7 +42,8 @@ class ReportTable extends Component {
             selectedName: name,
             selectedType: type,
             selectedDesc: description,
-            selectedKey: key
+            selectedKey: key,
+            selectedHarasser: harasser
         });
     };
 
@@ -70,9 +72,10 @@ class ReportTable extends Component {
                         let currDate = document.datetime;
                         let currType = document.type;
                         let currDescription = document.description;
+                        let currHarasser = document.harasser;
                         console.log(document);
                         currentRows.push(
-                            <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey)}>
+                            <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey, currHarasser)}>
                                 <div className={"rows " + (document.reportType === "bystander" ? "bystander" : "firstHand")}>
                                     <div className="content">
                                         <div className="head">
@@ -102,7 +105,8 @@ class ReportTable extends Component {
                     date: this.state.selectedDate,
                     type: this.state.selectedType,
                     description: this.state.selectedDesc,
-                    key: this.state.selectedKey
+                    key: this.state.selectedKey,
+                    harasser: this.state.selectedHarasser
                 }
             }} />
         }

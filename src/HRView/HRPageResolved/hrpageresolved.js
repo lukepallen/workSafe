@@ -33,7 +33,7 @@ class ResolvedTable extends Component {
         this.createRows();
     }
 
-    handleClick(status, name, datetime, type, description, key) {
+    handleClick(status, name, datetime, type, description, key, harasser) {
         this.setState({
             shouldRedirect: true,
             selectedStatus: status,
@@ -41,7 +41,8 @@ class ResolvedTable extends Component {
             selectedName: name,
             selectedType: type,
             selectedDesc: description,
-            selectedKey: key
+            selectedKey: key,
+            selectedHarasser: harasser
         });
     };
 
@@ -62,9 +63,10 @@ class ResolvedTable extends Component {
                     let currName = document.name;
                     let currDate = document.datetime;
                     let currType = document.type;
+                    let currHarasser = document.harasser;
                     let currDescription = document.description;
                     currentRows.push(
-                        <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey)}>
+                        <button key={rowid} onClick={() => this.handleClick(currStatus, currName, currDate, currType, currDescription, currKey, currHarasser)}>
                             <div className={"rows " + (document.reportType === "bystander" ? "bystander" : "firstHand")}>
                                 <div className="content">
                                     <div className="head">
@@ -93,7 +95,8 @@ class ResolvedTable extends Component {
                     date: this.state.selectedDate,
                     type: this.state.selectedType,
                     description: this.state.selectedDesc,
-                    key: this.state.selectedKey
+                    key: this.state.selectedKey,
+                    harasser: this.state.selectedHarasser
                 }
             }} />
         }
