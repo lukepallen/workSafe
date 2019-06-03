@@ -62,9 +62,6 @@ class Form extends Component {
         return(
             <div className="form">
                 <div id="header">
-                    <h3>
-                    Report Name
-                    </h3>
                     <form onChange={this.handleChange} onSubmit={this.handleSubmit} value={this.state.val}>
                         <select>
                             <option value="Validated">Validated</option>
