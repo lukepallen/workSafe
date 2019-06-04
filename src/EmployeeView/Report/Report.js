@@ -52,6 +52,7 @@ class Report extends React.Component {
             <div className="report">
                 {!this.state.userType ? 
                 <div className="select">
+                    <p>If you believe there is an immediate safety concern to you or someone else, you should immediately contact 911</p>
                     <div className="select-btns">
                         <button className="btn btn1" onClick={() => {this.setState({"userType": "bystander"}); this.reportInfo.reportType = "bystander";}}>Bystander</button>
                         <button className="btn btn1" onClick={() => {this.setState({"userType": "firstHand"}); this.reportInfo.reportType = "first hand";}}>First Hand</button>
@@ -105,10 +106,6 @@ class Report extends React.Component {
                             <p className="label">Description</p>
                             <textarea type="text" className="form-control form-control-sm" rows="2"
                                     onChange={evt => this.handleChange("description", evt.currentTarget.value)}></textarea>
-                        </div>
-                        <div className="evidence formSection short">
-                            <p className="label">Additional Evidence</p>
-                            <input type="file" className="form-control-file" id="exampleFormControlFile1"></input>
                         </div>
                     </div>
                     <div className="submit">
